@@ -1,0 +1,234 @@
+FORMAT: 1A
+HOST: http://sqd.test.str8lines.com/simplyQuick/rest
+
+# str8lines
+
+The str8lines platform is a simple API allowing consumers to read and write data pertaining  product development processes.
+
+# Str8Lines API Root [/]
+
+This resource does not have any attributes. Instead it offers the initial
+API affordances in the form of the links in the JSON body.
+
+It is recommend to follow the “url” link values,
+[Link](https://tools.ietf.org/html/rfc5988) or Location headers where
+applicable to retrieve resources. Instead of constructing your own URLs,
+to keep your client decoupled from implementation details.
+
+
+
+## Group ADMIN
+
+Resources related to administrative functions in the API.
+
+## Time Periods
+
+A Time object has the following attributes:
+
++ uuid - the unique identifier of this time period in the database
+
+### View a Time Period [GET]
+
+
++ Response 200 (application/json)
+
+        {
+            "uuid": 21804,
+            "name": "Fall 2014"
+        }
+
+
+## Group CLASSES
+
+Resources related to classes
+
+## Class [/class]
+
+A Class object has the following attributes:
+
++ uuid - the unique identifier of this time period in the database
++ type (string) - The type of item to create
++ name (string) - The unique name of the class 
++ _classification_code (string) - The class code
++ _description - The description of the class
+
+## Get All Classes [GET /classes] 
+
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+            "data":[
+                        {
+                            "description":"Cashmere",
+                            "name":"Cashmere",
+                            "class_code":"",
+                            "uuid":"5321",
+                            "type":"s8_classification",
+                            "s8_department_class":  [
+                                {
+                                    "name":"Activewear",
+                                    "uuid":"5373",
+                                    "type":"s8_department"
+                                }
+                            ]
+                        }
+                ],
+                "success":"true"
+            }
+            
+
+## Get Classes for a Department [GET /classes/{deptUUID}] 
+
++ Parameters
+    + deptUUID (long)
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+            "data":[
+                        {
+                            "description":"Cashmere",
+                            "name":"Cashmere",
+                            "class_code":"",
+                            "uuid":"5321",
+                            "type":"s8_classification",
+                            "s8_department_class":  [
+                                {
+                                    "name":"Activewear",
+                                    "uuid":"5373",
+                                    "type":"s8_department"
+                                }
+                            ]
+                        }
+                ],
+                "success":"true"
+            }
+
+## Add Class [POST /add] 
+
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "type": "s8_classification",
+                "name": "Class1",
+                "_classification_code": "CODE1",
+                "_description": "description1"
+            }
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": [
+                            {
+                                "description": "description1",
+                                "name": "Class1",
+                                "class_code": "CODE1",
+                                "uuid": "5510",
+                                "type": "s8_classification",
+                                "s8_department_class": []
+                            }
+                        ],
+                "success": "true"
+            }
+            
+### Update Class [POST /update]
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "uuid": 5510
+                "type": "s8_classification",
+                "name": "Class1_Updated",
+                "_classification_code": "CODE1",
+                "_description": "description1"
+            }
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": [
+                            {
+                                "description": "description1",
+                                "name": "Class1",
+                                "class_code": "CODE1",
+                                "uuid": "5510",
+                                "type": "s8_classification",
+                                "s8_department_class": []
+                            }
+                        ],
+                "success": "true"
+            }
+            
+### Add Department to Class [POST /addDepartment]
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "type": "s8_classification",
+                "uuid": "1500",
+                "s8_department_classification": [
+                    {
+                        "type": "s8_department",
+                        "uuid": "265"
+                    }
+                ]
+            }
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": [],
+                "success": "true"
+            }
+
+### Remove Department from Class [POST /removeDepartment]
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "type": "s8_classification",
+                "uuid": "1500",
+                "s8_department_classification": [
+                    {
+                        "type": "s8_department",
+                        "uuid": "265"
+                    }
+                ]
+            }
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": [],
+                "success": "true"
+            }
+
+
