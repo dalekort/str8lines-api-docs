@@ -231,4 +231,133 @@ A Class object has the following attributes:
                 "success": "true"
             }
 
+## Group PROJECT MANAGEMENT
+
+Resources related to the project management capabilities
+
+## Task [/proj]
+
+A Task object has the following attributes:
+
++ Id - the unique identifier of this object in the database (maps to uuid in db)
++ Name - The name of the task
++ StartDate  - the start date of the task in the ISO 8601 format
++ EndDate - the end date of the task in the ISO 8601 format
++ Duration - the numeric part of the task duration (the number of units)
++ DurationUnit - the unit part of the task duration, defaults to "d" (days). Valid values are:
+    + "ms" (milliseconds)
+    + "s" (seconds)
+    + "mi" (minutes)
+    + "h" (hours)
+    + "d" (days)
+    + "w" (weeks)
+    + "mo" (months)
+    + "q" (quarters)
+    + "y" (years)
++ Effort - the numeric part of the task effort (the number of units). The effort of the "parent" tasks will be automatically set to the sum of efforts of their "child" tasks
++ EffortUnit - the unit part of the task effort, defaults to "h" (hours). Valid values are:
+    + "ms" (milliseconds)
+    + "s" (seconds)
+    + "mi" (minutes)
+    + "h" (hours)
+    + "d" (days)
+    + "w" (weeks)
+    + "mo" (months)
+    + "q" (quarters)
+    + "y" (years)
++ PercentDone - the current status of a task, expressed as the percentage completed (integer from 0 to 100)
++ Cls - A CSS class that will be applied to each rendered task DOM element
++ BaselineStartDate - the baseline start date of the task in the ISO 8601 format.
++ BaselineEndDate - the baseline end date of the task in the ISO 8601 format
++ BaselinePercentDone - the baseline status of a task, expressed as the percentage completed (integer from 0 to 100)
++ CalendarId - the id of the calendar, assigned to task. Allows you to set the time when task can be performed. Should be only provided for specific tasks - all tasks by default are assigned to the project calen
++ SchedulingMode - the field, defining the scheduling mode for the task
++ ManuallyScheduled - When set to true, the StartDate of the task will not be changed by any of its incoming dependencies or constraints. Also, a manually scheduled parent task is not affected by its child tasks and behaves like any other normal task.
++ ConstraintType - A string containing the alias for a constraint class (w/o the gntconstraint prefix). Valid values are:
+    + "finishnoearlierthan"
+    + "finishnolaterthan"
+    + "mustfinishon"
+    + "muststarton"
+    + "startnoearlierthan"
+    + "startnolaterthan"
+
+## Get Project  [GET /proj/{uuid}] 
+
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+            "dependencies": {
+                "rows" : [
+                    {
+                        "Id"   : 1,
+                        "From" : 11,
+                        "To"   : 17
+                    }
+                ]
+            },
+             "assignments"  : {
+                "rows" : [
+                    {
+                        "Id"         : 1,
+                        "TaskId"     : 11,
+                        "ResourceId" : 1,
+                        "Units"      : 100
+                    }
+                ]
+            },
+            "resources" : {
+                "rows" : [
+                    {
+                        "Id"   : 1,
+                        "Name" : "Mats"
+                    }
+                ]
+            },
+             "tasks" : {
+                "rows" : [
+                    {
+                        "Id"                : 1000,
+                        "StartDate"         : "2010-01-13",
+                        "EndDate"           : "2010-02-13",
+                        "Name"              : "Project A",
+                        "TaskType"          : "Gnt.examples.advanced.model.Project",
+                        "Description"       : "Project A description",
+                        "ManuallyScheduled" : true,
+                        "AllowDependencies" : true,
+                        "iconCls"           : "projectIcon",
+                        "expanded"          : true,
+                        "children"          : [
+                            {
+                                "BaselineEndDate"   : "2010-02-01",
+                                "Id"                : 1,
+                                "Name"              : "Planning",
+                                "PercentDone"       : 50,
+                                "StartDate"         : "2010-01-18",
+                                "BaselineStartDate" : "2010-01-13",
+                                "Duration"          : 10,
+                                "expanded"          : true,
+                                "Rollup"            : true,
+                                "children"          : [ ]
+                            }, {
+                                "BaselineEndDate"   : "2010-01-28",
+                                "Id"                : 11,
+                                "leaf"              : true,
+                                "Name"              : "Investigate",
+                                "PercentDone"       : 50,
+                                "TaskType"          : "LowPrio",
+                                "StartDate"         : "2010-01-18",
+                                "BaselineStartDate" : "2010-01-20",
+                                "Segments"          : [ ]
+                                "children"          : [ ]
+                            }
+                        ]
+                    }
+                ],
+                "success":"true"
+            }
+            
 
