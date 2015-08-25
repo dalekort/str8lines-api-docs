@@ -281,7 +281,7 @@ A Task object has the following attributes:
     + "startnoearlierthan"
     + "startnolaterthan"
 
-## Get Project  [GET /proj/{uuid}] 
+## Get Schedule  [GET /proj/get/{uuid}] 
 
 
 + Response 200 (application/json)
@@ -360,4 +360,74 @@ A Task object has the following attributes:
                 "success":"true"
             }
             
+
+## Update Schedule [POST /proj/update] 
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "uuid": "1500",
+                "tasks": {
+                    "updated": [
+                        {"uuid": 50, 
+                        "StartDate": "2010-02-18T00:00:00-05:00",
+                        "EndDate": "2010-02-18T00:00:00-05:00",
+                        "Duration": 273,
+                        "PercentDone": 50.33,
+                        "Name:" "Investigation"
+                        }
+                    ],
+                    "added": [
+                        {"StartDate": "2015-08-19T00:00:00-04:00",
+                        "EndDate": "2015-08-20T00:00:00-04:00",
+                        "Duration": 1,
+                        "DurationUnit": "d",
+                        "Name": "New Task",
+                        "ParentId:" 50
+                        }
+                    ]
+                }
+            }
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": [],
+                "success": "true"
+            }
+
+## Add Project [POST /proj/add] 
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "name": "New Project",
+                "roles": [ 101, 102, 103 ],
+                "resources": [ 201, 202, 203 ],
+                "visible_to": [ 401 ],
+                "color": "#490390",
+                "icon": { need to define - upload? }
+               
+            }
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": [ 
+                    {
+                        "uuid": 500
+                    }
+                ],
+                "success": "true"
+            }
 
