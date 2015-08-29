@@ -381,7 +381,8 @@ A Task object has the following attributes:
                         "duration": 1,
                         "duration_unit": "d",
                         "name": "New Task",
-                        "ParentId:" 50
+                        "ParentId:" 50                          //mandatory
+                        "PhantomId": "phantomCreatedByBryntum"  //mandatory
                         }
                     ]
                 }
@@ -393,8 +394,9 @@ A Task object has the following attributes:
     + Body
 
             {
-                "data": [],
-                "success": "true"
+                "success": "true",
+                "errors": [],       // will display 1 error for each task not updated
+                "tasks": []         // will contain added tasks with uuids (updates/deletes will not be included)
             }
 
 ## Add Project [POST /proj/add] 
