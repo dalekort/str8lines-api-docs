@@ -418,6 +418,28 @@ A Task object has the following attributes:
                             "uuid": 124
                         }
                     ]
+                },
+                ,
+                "assignments": {
+                    "added": [
+                        {
+                            "PhantomId": "phantomCreatedByBryntum" // mandatory
+                            "TaskId": 101,                         // mandatory - can use Phantom String for Task
+                            "ResourceId": 102,                     // mandatory - must be valid user uuid
+                            "units": 0,
+                        }
+                    ],
+                    "updated": [
+                        {
+                            "uuid": 123,                            // mandatory
+                            "units": 50,
+                        }
+                    ],
+                    "deleted": [
+                        {
+                            "uuid": 124
+                        }
+                    ]
                 }
             }
 
