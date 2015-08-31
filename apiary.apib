@@ -368,32 +368,55 @@ A Task object has the following attributes:
                 "project_id": 1010    /// mandatory
                 "tasks": {
                     "updated": [
-                        {"uuid": 50, 
-                        "start_date": "2010-02-18T00:00:00-05:00",
-                        "end_date": "2010-02-18T00:00:00-05:00",
-                        "duration": 273,
-                        "pct_done": 50.33,
-                        "name:" "Investigation"
+                        {
+                            "uuid": 50, 
+                            "start_date": "2010-02-18T00:00:00-05:00",
+                            "end_date": "2010-02-18T00:00:00-05:00",
+                            "duration": 273,
+                            "pct_done": 50.33,
+                            "name:" "Investigation"
                         }
                     ],
                     "added": [
-                        {"start_date": "2015-08-19T00:00:00-04:00",
-                        "end_date": "2015-08-20T00:00:00-04:00",
-                        "duration": 1,
-                        "duration_unit": "d",
-                        "name": "New Task",
-                        "ParentId:" 50                          //mandatory
-                        "PhantomId": "phantomCreatedByBryntum"  //mandatory
+                        {
+                            "start_date": "2015-08-19T00:00:00-04:00",
+                            "end_date": "2015-08-20T00:00:00-04:00",
+                            "duration": 1,
+                            "duration_unit": "d",
+                            "name": "New Task",
+                            "ParentId:" 50                          //mandatory
+                            "PhantomId": "phantomCreatedByBryntum"  //mandatory
+                        }
+                    ],
+                    "deleted": [
+                        {
+                            "uuid": 1234                        //mandatory
                         }
                     ]
                 },
                 "dependencies": {
                     "added": [
-                        "PhantomId": "phantomCreatedByBryntum" // mandatory
-                        "From": 101,                           // mandatory
-                        "To": 102,                             // mandatory
-                        "lag": 0,
-                        "lag_unit": "d"
+                        {
+                            "PhantomId": "phantomCreatedByBryntum" // mandatory
+                            "From": 101,                           // mandatory
+                            "To": 102,                             // mandatory
+                            "lag": 0,
+                            "lag_unit": "d"
+                        }
+                    ],
+                    "updated": [
+                        {
+                            "uuid": 123,                            // mandatory
+                            "From": 102,
+                            "To": 103,
+                            "lag": 1,
+                            "lag_unit": "m"
+                        }
+                    ],
+                    "deleted": [
+                        {
+                            "uuid": 124
+                        }
                     ]
                 }
             }
