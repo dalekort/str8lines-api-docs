@@ -585,4 +585,75 @@ A Task object has the following attributes:
                 ],
                 "success": "true"
             }
+            
+## Group EXTERNAL STORAGE
+
+Resources related to 3rd party cloud base storage solutions (e.g. OneDrive, Google Drive, Box)
+
+## Authentication [/ext/auth]
+
+Each third party solution will have a different URIs to called. However, all the third party solutions provide Oauth2 authentication. Oauth2 provides an access token and a refresh token. The access token is used to determine access to the user's information. The access token generally expires in one hour. The refresh token is used to get a new access token. It generally expires after 90 days. The 'http://<server>/<webapp>/auth/onedrive' servlet stores the access token and the refresh token in a user's silo so that it can reference at a later time. The client will finally be redirect to 'http://<server>/<webapp>/siloDialog.html?siloUUID=<siloUUID>'.
+
+
+### OneDrive for Personal
+
+Oauth2 URI - https://login.live.com/oauth20_authorize.srf
+
+Parameters:
++client_id - The id of the client registered at 'https://account.live.com/developers/applications/index'. This the StraightLines registered app.For our purposes the value is '000000004016787D'
++scope - Determines what type of access the app is granted when the app is signed in. For our purposes the value is wl.signin and wl.offline_access. The value should be URL encoded.
++response_type - Oauth2 allows for 2 types of responses token and code. For our purposes the value is 'code'.
++redirect_uri - Once a token is generated, it is passed back to the redirect_uri. This uri must match the uri set in StrightLines regestered app. The value should be URL encoded.
++state - Oauth2 allows for data to pass from the client to redirect_uri using this parameter. For our purposes the value is the user UUID and company UUID piped seperated.
+
+Example - https://login.live.com/oauth20_authorize.srf?client_id=000000004016787D&scope=wl.signin%20wl.offline_access&response_type=code&redirect_uri=http%3A%2F%2Fbrentrudd.ddns.net%2FsimplyQuick%2Fauth%2Fonedrive&state=2678|0
+
+Reference - https://dev.onedrive.com/auth/msa_oauth.htm
+
+### OneDrive for Business
+
+Oauth2 URI - https://login.windows.net/common/oauth2/authorize
+
+Parameters:
++client_id - The id of the client registered at 'https://manage.windowsazure.com/str8lines.com#Workspaces/All/dashboard'. This the StraightLines registered app.For our purposes the value is '000000004016787D'
++response_type - Oauth2 allows for 2 types of responses token and code. For our purposes the value is 'code'.
++redirect_uri - Once a token is generated, it is passed back to the redirect_uri. This uri must match the uri set in StrightLines regestered app. The value should be URL encoded.
++state - Oauth2 allows for data to pass from the client to redirect_uri using this parameter. For our purposes the value is the user UUID and company UUID piped seperated.
+
+Example - https://login.windows.net/common/oauth2/authorize?client_id=753abfd8-d355-443c-90d7-27215bf073f6&response_type=code&redirect_uri=http%3A%2F%2Fbrentrudd.ddns.net%2FsimplyQuick%2Fauth%2Fonedrivebusiness&state=2678|0
+
+Reference - https://dev.onedrive.com/app-registration.htm#register-your-app-for-onedrive-for-business
+
+## List Contents [GET /ext/list/{soliUUID}/{directory}]
+
+List items in directory
+
++ Parameters
+    + soliUUID (long)
+    + directory (string) - This should be URL encoded
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+            "data":[
+                        {
+                            "description":"Cashmere",
+                            "name":"Cashmere",
+                            "class_code":"",
+                            "uuid":"5321",
+                            "type":"s8_classification",
+                            "s8_department_class":  [
+                                {
+                                    "name":"Activewear",
+                                    "uuid":"5373",
+                                    "type":"s8_department"
+                                }
+                            ]
+                        }
+                ],
+                "success":"true"
+            }
 
