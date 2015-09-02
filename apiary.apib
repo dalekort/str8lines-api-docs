@@ -37,6 +37,107 @@ A Time object has the following attributes:
             "name": "Fall 2014"
         }
 
+## Silos [/silos]
+
+A Silo object has the following attributes:
+
++ uuid - the unique identifier of this time period in the database
++ type (string) - The type of item to create
++ _access_token (string) - The Oauth2 access token used to validate access
++ _refresh_token (string) - The Oauth2 refresh token used to get a new access token
++ _description (string) - The description of the silo
++ _silo_type (string) - The type of the silo. (.e.g. ONEDRIVE_PERSONAL or ONEDRIVE_BUSINESS)
++ _end_point_uri (string) - The uri for the external service
++ _folder_list (string) - A comma seperated list of folder to be monitored
++ _last_processed_datetime (long)- The date and time in millisecond of when the folder was latest processed.
+
+
+### Get all of the user's Silos [GET]
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "data":
+                        [ 
+                            {
+                                "_access_token": "EwB4Aq1DBAAUGCCXc8wU/zFu9QnLdZXy+YnElFkAAQsixDYjwX8QDxj5AGZqZJR2DP5dhq19B9f7DW6KG234mtw/S7MhwZP7lgRrBKCr1FTHL51a98pq/AnBkj1uSggdnyfSqWVnruPSuVcauVOKEifa1yKxgYzZLDA0qhOyESPuGvH7Kga7EYgyrWykcjfeUh9RcH334+uuWp8EJ4a8GVkj8A6CPJvwX3ziqY15XH83DiHEXBCXLAyFrB+42OdOrfi5C++mqod9/X+h6XoSVUFpR9lxrgPim3hNvbwz4uW77xnup8v9Gwb13cABQmFXLf7FbBgKg7epRWGL9d8T4t9tvDbW76eroLZM60w2NrTxKt4p/4Hu6dTe+yypmYIDZgAACDT94VB+u1fWSAEqeJBYcONJfIQhDoCZLQouVGmnqVTn9sbbHxi5spHT9FozvL/obTAm9aEX0bxmvdhxeNZz4sQ7leddBXXl6Vg4F8PbEjej/ECwCpeoNqPN0gEo+4dCF5tESEGCkbO5n/gude0g/n/6f6TI0wve55ta5sw07d0nmancHClrExU54hoUCzHUMGkOC+uDeURNmQKEWQHz3zy2f4cVPLyO/nNvDZ0JDuLWuH4lZminhZdRz/SW/XvpsDwdstpOWSqa0AhNfqmoOp9KZiFpjZrRUIALWoSqF7zzrciNS3bzKndbVNvncVMU2rlqpSPHGrT6iQ76DPMA3aWonDrii8pzfZemCTjEHgujkbRZU1J/GY++T6Wgf7GTfzrcKmSGZqtcxHuHhbgdn9G4lDiTrxqg/MR9+cSyU/nFng6sv/JIXK0Fg4Sf9UMip8NMYgE=",
+                                "_refresh_token": "MCmr3FhU0oHas!*kzSCNGid!nwVJKLflNrhaRZvuJS83RV5*s2qr6qYU2atoThqP40tY1zGu629jq3RZ3NN!ExZ40SI**6EtgVi48LKoELlPnEejP7Ez6g8dRhzeufkbd5rm1ocAVTB34NposKJUwd3VXFELnkuvSSP9A5vE66YrmJs9w*wJFPb5RU9JclGcD*Qk*qu5lU*0m*2s8aX2fltmS76H8s0RW1YLiMm2vt*Ig78llCnCa!aM3iKptuTOzfvzaLqy1kVuvY45Q6mHl2iA1RMrtO3BrFbDEMo7er7IzSZse6xtmF0PLhHsWy6DJtUu2d8S19DtbnKjBFxcl0mFf8Cha9PHwILpHuiOskz9gVezaqypVsWjYWoSwaRedTA$$",
+                                "_silo_type": "ONEDRIVE_PERSONAL",
+                                "_last_processed_datetime": "892342341124",
+                                "_description": "This my OneDrive Personal folder",
+                                "_end_point_uri": "",
+                                "_folder_list": "1111111,232323",
+                                "type": "s8_silo",
+                                "uuid": "2924"
+                            }
+                        ],
+                "success": "true"
+            }
+
+### User's Silo [/silos/{siloUUID}]
+
++ Parameters
+    + siloUUID (long)
+
+#### Get user's Silo [GET]
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "data":
+                    {
+                        "_access_token": "EwB4Aq1DBAAUGCCXc8wU/zFu9QnLdZXy+YnElFkAAQsixDYjwX8QDxj5AGZqZJR2DP5dhq19B9f7DW6KG234mtw/S7MhwZP7lgRrBKCr1FTHL51a98pq/AnBkj1uSggdnyfSqWVnruPSuVcauVOKEifa1yKxgYzZLDA0qhOyESPuGvH7Kga7EYgyrWykcjfeUh9RcH334+uuWp8EJ4a8GVkj8A6CPJvwX3ziqY15XH83DiHEXBCXLAyFrB+42OdOrfi5C++mqod9/X+h6XoSVUFpR9lxrgPim3hNvbwz4uW77xnup8v9Gwb13cABQmFXLf7FbBgKg7epRWGL9d8T4t9tvDbW76eroLZM60w2NrTxKt4p/4Hu6dTe+yypmYIDZgAACDT94VB+u1fWSAEqeJBYcONJfIQhDoCZLQouVGmnqVTn9sbbHxi5spHT9FozvL/obTAm9aEX0bxmvdhxeNZz4sQ7leddBXXl6Vg4F8PbEjej/ECwCpeoNqPN0gEo+4dCF5tESEGCkbO5n/gude0g/n/6f6TI0wve55ta5sw07d0nmancHClrExU54hoUCzHUMGkOC+uDeURNmQKEWQHz3zy2f4cVPLyO/nNvDZ0JDuLWuH4lZminhZdRz/SW/XvpsDwdstpOWSqa0AhNfqmoOp9KZiFpjZrRUIALWoSqF7zzrciNS3bzKndbVNvncVMU2rlqpSPHGrT6iQ76DPMA3aWonDrii8pzfZemCTjEHgujkbRZU1J/GY++T6Wgf7GTfzrcKmSGZqtcxHuHhbgdn9G4lDiTrxqg/MR9+cSyU/nFng6sv/JIXK0Fg4Sf9UMip8NMYgE=",
+                        "_refresh_token": "MCmr3FhU0oHas!*kzSCNGid!nwVJKLflNrhaRZvuJS83RV5*s2qr6qYU2atoThqP40tY1zGu629jq3RZ3NN!ExZ40SI**6EtgVi48LKoELlPnEejP7Ez6g8dRhzeufkbd5rm1ocAVTB34NposKJUwd3VXFELnkuvSSP9A5vE66YrmJs9w*wJFPb5RU9JclGcD*Qk*qu5lU*0m*2s8aX2fltmS76H8s0RW1YLiMm2vt*Ig78llCnCa!aM3iKptuTOzfvzaLqy1kVuvY45Q6mHl2iA1RMrtO3BrFbDEMo7er7IzSZse6xtmF0PLhHsWy6DJtUu2d8S19DtbnKjBFxcl0mFf8Cha9PHwILpHuiOskz9gVezaqypVsWjYWoSwaRedTA$$",
+                        "_silo_type": "ONEDRIVE_PERSONAL",
+                        "_last_processed_datetime": "892342341124",
+                        "_description": "This my OneDrive Personal folder",
+                        "_end_point_uri": "",
+                        "_folder_list": "1111111,232323",
+                        "type": "s8_silo",
+                        "uuid": "2924"
+                    },
+                "success": "true"
+            }
+
+#### Update user's Silo [PUT]
+
++ Request (application/json)
+    + Body
+    
+            {
+                "_access_token": "EwB4Aq1DBAAUGCCXc8wU/zFu9QnLdZXy+YnElFkAAQsixDYjwX8QDxj5AGZqZJR2DP5dhq19B9f7DW6KG234mtw/S7MhwZP7lgRrBKCr1FTHL51a98pq/AnBkj1uSggdnyfSqWVnruPSuVcauVOKEifa1yKxgYzZLDA0qhOyESPuGvH7Kga7EYgyrWykcjfeUh9RcH334+uuWp8EJ4a8GVkj8A6CPJvwX3ziqY15XH83DiHEXBCXLAyFrB+42OdOrfi5C++mqod9/X+h6XoSVUFpR9lxrgPim3hNvbwz4uW77xnup8v9Gwb13cABQmFXLf7FbBgKg7epRWGL9d8T4t9tvDbW76eroLZM60w2NrTxKt4p/4Hu6dTe+yypmYIDZgAACDT94VB+u1fWSAEqeJBYcONJfIQhDoCZLQouVGmnqVTn9sbbHxi5spHT9FozvL/obTAm9aEX0bxmvdhxeNZz4sQ7leddBXXl6Vg4F8PbEjej/ECwCpeoNqPN0gEo+4dCF5tESEGCkbO5n/gude0g/n/6f6TI0wve55ta5sw07d0nmancHClrExU54hoUCzHUMGkOC+uDeURNmQKEWQHz3zy2f4cVPLyO/nNvDZ0JDuLWuH4lZminhZdRz/SW/XvpsDwdstpOWSqa0AhNfqmoOp9KZiFpjZrRUIALWoSqF7zzrciNS3bzKndbVNvncVMU2rlqpSPHGrT6iQ76DPMA3aWonDrii8pzfZemCTjEHgujkbRZU1J/GY++T6Wgf7GTfzrcKmSGZqtcxHuHhbgdn9G4lDiTrxqg/MR9+cSyU/nFng6sv/JIXK0Fg4Sf9UMip8NMYgE=",
+                "_refresh_token": "MCmr3FhU0oHas!*kzSCNGid!nwVJKLflNrhaRZvuJS83RV5*s2qr6qYU2atoThqP40tY1zGu629jq3RZ3NN!ExZ40SI**6EtgVi48LKoELlPnEejP7Ez6g8dRhzeufkbd5rm1ocAVTB34NposKJUwd3VXFELnkuvSSP9A5vE66YrmJs9w*wJFPb5RU9JclGcD*Qk*qu5lU*0m*2s8aX2fltmS76H8s0RW1YLiMm2vt*Ig78llCnCa!aM3iKptuTOzfvzaLqy1kVuvY45Q6mHl2iA1RMrtO3BrFbDEMo7er7IzSZse6xtmF0PLhHsWy6DJtUu2d8S19DtbnKjBFxcl0mFf8Cha9PHwILpHuiOskz9gVezaqypVsWjYWoSwaRedTA$$",
+                "_last_processed_datetime": "892342341124",
+                "_description": "This my OneDrive Personal folder",
+                "_folder_list": "1111111,232323"
+            }
+            
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "data": [],
+                "success": "true"
+            }
+            
+
+### Delete user's Silo [DELETE]
+    
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "data": [],
+                "success": "true"
+            }
+            
+
 
 ## Group CLASSES
 
