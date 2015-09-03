@@ -590,12 +590,12 @@ A Task object has the following attributes:
 
 Resources related to 3rd party cloud base storage solutions (e.g. OneDrive, Google Drive, Box)
 
-## Authentication [/ext/auth]
+### Group Authentication
 
-Each third party solution will have a different URIs to called. However, all the third party solutions provide Oauth2 authentication. Oauth2 provides an access token and a refresh token. The access token is used to determine access to the user's information. The access token generally expires in one hour. The refresh token is used to get a new access token. It generally expires after 90 days. The 'http://<server>/<webapp>/auth/onedrive' servlet stores the access token and the refresh token in a user's silo so that it can reference at a later time. The client will finally be redirect to 'http://<server>/<webapp>/siloDialog.html?siloUUID=<siloUUID>'.
+Each third party solution will have a different URIs to called. However, all the third party solutions provide Oauth2 authentication. Oauth2 provides an access token and a refresh token. The access token is used to determine access to the user's information. The access token generally expires in one hour. The refresh token is used to get a new access token. It generally expires after 90 days. The 'http://&lt;server&gt;/&lt;webapp&gt;/auth/onedrive' servlet stores the access token and the refresh token in a user's silo so that it can reference at a later time. The client will finally be redirect to 'http://&lt;server&gt;/&lt;webapp&gt;/siloDialog.html?siloUUID=&lt;siloUUID&gt;'.
 
 
-### OneDrive for Personal
+#### OneDrive for Personal
 
 Oauth2 URI - https://login.live.com/oauth20_authorize.srf
 
@@ -610,7 +610,7 @@ Example - https://login.live.com/oauth20_authorize.srf?client_id=000000004016787
 
 Reference - https://dev.onedrive.com/auth/msa_oauth.htm
 
-### OneDrive for Business
+#### OneDrive for Business
 
 Oauth2 URI - https://login.windows.net/common/oauth2/authorize
 
@@ -624,7 +624,9 @@ Example - https://login.windows.net/common/oauth2/authorize?client_id=753abfd8-d
 
 Reference - https://dev.onedrive.com/app-registration.htm#register-your-app-for-onedrive-for-business
 
-## List Contents [GET /ext/list/{soliUUID}/{directory}]
+### Group External Service API
+
+#### List Contents [GET /ext/list/{soliUUID}/{directory}]
 
 List items in directory
 
