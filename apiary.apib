@@ -383,7 +383,31 @@ A Task object has the following attributes:
     + "startnoearlierthan"
     + "startnolaterthan"
 
-## Get Schedule  [GET /proj/get/{uuid}] 
+## Get Available Project [GET /proj/get] 
+
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": [
+                    {
+                        "uuid"                  : 1,
+                        "duration"              : 11,
+                        "manually_scheduled"    : false,
+                        "baseline_pct_done"     : 0,
+                        "name"                  : "Project A",
+                        "pct_done"              : 50,
+                        "effort"                : 0,
+                        "type"                  : "project"
+                    }
+                ],
+                "success":"true"
+            }
+            
+## Get Project Details [GET /proj/get/{uuid}] 
 
 
 + Response 200 (application/json)
