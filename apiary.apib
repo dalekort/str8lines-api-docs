@@ -21,6 +21,30 @@ to keep your client decoupled from implementation details.
 
 Resources related to administrative functions in the API.
 
+## Company 
+
+A Company  has the following attributes:
+
++ uuid - the unique identifier of this item in the database
++ name - a unique name of this item in the database
+
+### Create Business Role [POST /domain/create]
+
++ Request (application/json)
+    + Body
+    
+            {
+                "name": "New Role Name"         // Mandatory
+            }
+
++ Response 200 (application/json)
+
+        {
+            "uuid": 21804,
+            "name": "New Role Name"
+        }
+
+
 ## Time Periods [/season]
 
 A Time object has the following attributes:
