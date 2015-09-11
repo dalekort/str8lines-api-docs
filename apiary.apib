@@ -139,6 +139,82 @@ A Silo object has the following attributes:
             }
             
 
+## Group USER
+
+Resources related to user functions in the API.
+
+## User [/user]
+
+A User object has the following attributes:
+
++ uuid - the unique identifier of the user in the database
++ name - the unique name (email) of the user
+
+### Add a Division to a User [POST /addDivision]
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "s8_user": {
+                    "uuid": "111.222.333"    // mandatory - composite id
+                },
+                "s8_department": {
+                    "uuid": "444.555.666"    // mandatory - composite id
+                }
+            }
+
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": [],
+                "success": "true"
+            }
+
+### Remove a Division from a User [POST /removeDivision]
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "s8_user": {
+                    "uuid": "111.222.333"    // mandatory - composite id
+                },
+                "s8_department": {
+                    "uuid": "444.555.666"    // mandatory - composite id
+                }
+            }
+
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": [],
+                "success": "true"
+            }
+
+### Get Context User's Divisions [GET /division]
+
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": [],
+                "success": "true"
+            }
+
 
 ## Group CLASSES
 
@@ -592,7 +668,7 @@ A Task object has the following attributes:
                 "tasks": []         // will contain added tasks with uuids (updates/deletes will not be included)
             }
 
-## Add Project [POST /proj/add] 
+## Add Project [POST /domain/create] 
 
 + Request (application/json)
 
