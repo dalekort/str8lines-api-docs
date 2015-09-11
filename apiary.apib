@@ -21,14 +21,23 @@ to keep your client decoupled from implementation details.
 
 Resources related to administrative functions in the API.
 
-## Company 
+
+### Company 
 
 A Company  has the following attributes:
 
 + uuid - the unique identifier of this item in the database
 + name - a unique name of this item in the database
 
-### Create Business Role [POST /domain/create]
+### Business Roles
+
+
+A Business Role has the following attributes:
+
++ uuid - the unique identifier of this item in the database
++ name - a unique name of this item in the database
+
+#### Create Business Role [POST /domain/create]
 
 + Request (application/json)
     + Body
@@ -43,6 +52,54 @@ A Company  has the following attributes:
         {
             "uuid": 21804,
             "name": "New Role Name"
+        }
+
+#### Get Business Roles for Context Company [GET /company/businessRole]
+
+
++ Response 200 (application/json)
+
+        {
+            "data": [
+                {
+                    "name": "Technical Design",
+                    "uuid": "111.222.333",
+                    "type": "business_role",
+                },
+                {
+                    "name": "Design",
+                    "uuid": "444.222.333",
+                    "type": "business_role",
+                }
+            ],
+            "success": "true"
+        }
+
+#### Get System Roles for Context Company [GET /company/role]
+
+
++ Response 200 (application/json)
+
+        {
+            "data": [
+                {
+                    "created": 1419251660755,
+                    "description": "desc4",
+                    "name": "sample_editor",
+                    "uuid": "4",
+                    "type": "s8_role_base",
+                    "modified": 1419251660755
+                },
+                {
+                    "created": 1419251660755,
+                    "description": "desc3",
+                    "name": "sample_editor",
+                    "uuid": "3",
+                    "type": "s8_role_base",
+                    "modified": 1419251660755
+                }
+            ],
+            "success": "true"
         }
 
 
@@ -151,7 +208,6 @@ A Silo object has the following attributes:
                 "success": "true"
             }
             
-
 ### Delete user's Silo [DELETE /silos/{siloUUID}]
     
 + Response 200 (application/json)
@@ -174,6 +230,100 @@ A User object has the following attributes:
 
 + uuid - the unique identifier of the user in the database
 + name - the unique name (email) of the user
+
+### Get Users for Context Company [GET /users]
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "data": [
+                    {
+                        "theme_mode": null,
+                        "theme": null,
+                        "companyAdmin": true,
+                        "label": "admin@arribafashions.com",
+                        "type": "s8_user",
+                        "primaryImage": null,
+                        "modified": 1428487382728,
+                        "first_name": "",
+                        "activation_link_window": null,
+                        "mobile_phone": null,
+                        "created": 1428487382728,
+                        "name": "admin@arribafashions.com",
+                        "s8_role_user": [
+                            {
+                                "created": 1428487382791,
+                                "direction": "from",
+                                "description": "Employee",
+                                "name": "employee",
+                                "uuid": "2316",
+                                "type": "s8_role",
+                                "relUUID": "4608",
+                                "modified": 1428487382791
+                            }
+                        ],
+                        "business_role_user": [
+                            {
+                                "name": "Technical Design",
+                                "uuid": "2316",
+                                "type": "business_role",
+                            }
+                        ],"last_name": "",
+                        "active": true,
+                        "uuid": "2308",
+                        "s8_department_user": [
+                            {
+                                "created": 1428487382791,
+                                "direction": "from",
+                                "name": "Default Department",
+                                "uuid": "2314",
+                                "type": "s8_department",
+                                "relUUID": "49500",
+                                "modified": 1428487382791
+                            },
+                            {
+                                "created": 1428487400724,
+                                "direction": "from",
+                                "name": "Big & Tall",
+                                "active": true,
+                                "uuid": "4717",
+                                "type": "s8_department",
+                                "relUUID": "49501",
+                                "modified": 1428487400724
+                            }
+                        ],
+                        "office_phone": null
+                    }
+                ]
+            }      
+            
+### Add a Business Role/Role to a User [POST /addRole]
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "s8_user": {
+                    "uuid": "111.222.333"    // mandatory - composite id
+                },
+                "s8_role": {                 // key can be s8_role or business_role
+                    "uuid": "444.555.666"    // mandatory - composite id
+                }
+            }
+
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": [],
+                "success": "true"
+            }
 
 ### Add a Division to a User [POST /addDivision]
 
