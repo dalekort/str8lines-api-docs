@@ -913,6 +913,46 @@ Each third party solution will have a different URIs to called. However, all the
 
 ### Group External Service API
 
+#### List Contents [GET /ext/list/{soliUUID}]
+
+List items of root directory
+
++ Parameters
+    + soliUUID (long)
+
++ Response 200 (application/json)
+
+
+    + Body
+    
+            {
+                "data": [
+                    {
+                        "size": 1493,
+                        "name": "Documents",
+                        "create": 1380726528523,
+                        "modified": 1380726591021,
+                        "id": "7FED01C5C174810!106"
+                    },
+                    {
+                        "size": 10399,
+                        "name": "folder1",
+                        "create": 1440085770013,
+                        "modified": 1441139873367,
+                        "id": "7FED01C5C174810!109"
+                    },
+                    {
+                        "size": 20725,
+                        "name": "Color0.gif",
+                        "create": 1440085792085,
+                        "modified": 1440089683033,
+                        "id": "7FED01C5C174810!110",
+                        "uri": "https://public-dm2306.files.1drv.com/y3mAJ0FdODCosvI8JRD1FNutz7KzXfNLfFUukhrZHOX-153DJFklRe-j_kPX9CYAmJajrVEdbwneyvEzSgpXDolRZeNlZCdQ4ibEWXVXCeiUwux2mmFobx-DBdYUUdlNP3Fk0t9RmwJoIuukVdXBK8Ky2aHK8ATWVEqjqMSrftwPhS8QBgWTbl6anNON5oXyIL8gv64RFpWIpeeRk0wQQ0hww"
+                    }
+                ],
+                "success": "true"
+            }
+
 #### List Contents [GET /ext/list/{soliUUID}/{directoryId}]
 
 List items in directory
