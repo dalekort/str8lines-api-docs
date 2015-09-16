@@ -873,6 +873,178 @@ A Task object has the following attributes:
                 "success": "true"
             }
             
+## Group USER INTERFACE
+
+Resources related to user interface
+
+### UI [/ui]
+
+A UI object has the following attributes:
+
++ to be filled in...
+
+### Get Template UI [GET /ui/template]
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                data:
+                {
+                    tree:
+                    [
+                        {
+                        _c: "node_folder"
+                        children: 
+                        [
+                            {
+                                _c: "node_folder"
+                                _t: "s8_folder"
+                                _v: "62106"
+                                _f: "s8_folder"
+                                count: 0
+                                _l: "Home"
+                            },
+                            {
+                                _c: "node_folder"
+                                _t: "s8_folder"
+                                _v: "62103"
+                                _f: "s8_folder"
+                                count: 0
+                                _l: "Apparel"
+                            }
+                        _t: "s8_folder"
+                        _v: "62100"
+                        _f: "s8_folder"
+                        count: 0
+                        _l: "Soft Lines"
+                        }
+                    ],
+                    fields: 
+                    [
+                        {
+                            system: false
+                            freezePane: false
+                            hidden: false
+                            editable: false
+                            label: "actions"
+                            type: "action"
+                            actions: 
+                            [
+                                {
+                                    _c: "open"
+                                    _css: "open"
+                                    _l: "Open"
+                                },
+                                {
+                                    _c: "delete"
+                                    _css: "delete"
+                                    _l: "Delete"
+                                }
+                        },
+                        {
+                            system: true
+                            freezePane: false
+                            hidden: false
+                            editable: false
+                            type: "text_filed"
+                            key: "uuid"
+                        },
+                        {
+                            system: true
+                            freezePane: false
+                            hidden: false
+                            editable: false
+                            type: "text_filed"
+                            key: "s8_folder"
+                        },
+                        {
+                            system: false
+                            freezePane: false
+                            hidden: false
+                            editable: true
+                            label: "Code"
+                            type: "text_filed"
+                            key: "name"
+                        },
+                        {
+                            system: false
+                            freezePane: false
+                            hidden: false
+                            editable: true
+                            label: "Description"
+                            type: "text_filed"
+                            key: "description"
+                        },
+                        {
+                            system: false
+                            freezePane: false
+                            hidden: false
+                            editable: true
+                            label: "Date Created"
+                            type: "date"
+                            key: "created"
+                        },
+                        {
+                            system: false
+                            freezePane: false
+                            hidden: false
+                            editable: true
+                            label: "Date Last Used"
+                            type: "date"
+                            key: "last_used"
+                        },
+                        {
+                            system: false
+                            freezePane: false
+                            hidden: false
+                            editable: true
+                            label: "Status"
+                            type: "select"
+                            choices: 
+                            [
+                                {
+                                    display: "active 4529"
+                                    name: "active"
+                                    UUID: "4529"
+                                    value: "4529"
+                                },
+                                {
+                                    display: "inactive 33092"
+                                    name: "inactive"
+                                    UUID: "33092"
+                                    value: "33092"
+                                }
+                            ],
+                            key: "status"
+                        },
+                        {
+                            system: false
+                            freezePane: false
+                            hidden: false
+                            editable: true
+                            label: "Recent Messages"
+                            type: "message"
+                            key: "messages"
+                        },
+                        {
+                            system: false
+                            freezePane: false
+                            hidden: false
+                            editable: true
+                            label: "Recent Changes"
+                            type: "history"
+                            key: "history"
+                        },
+                        chart: {
+                            key: "status"
+                        },
+                    }
+                    
+                success: "true"
+            }
+            
 ## Group EXTERNAL STORAGE
 
 Resources related to 3rd party cloud base storage solutions (e.g. OneDrive, Google Drive, Box)
