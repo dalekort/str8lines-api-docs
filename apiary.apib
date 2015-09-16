@@ -102,6 +102,35 @@ A Business Role has the following attributes:
             "success": "true"
         }
 
+## Update Business Role [POST /domain/update] 
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "role": {
+                    "updated": [
+                        {
+                            "uuid": "111.222.333", 
+                            "name": "New name",
+                            "status": "active"
+                        }
+                    ]
+                }
+            }
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "success": "true",
+                "errors": [],       // will display 1 error for each item not updated
+            }
+
+
 
 ## Time Periods [/season]
 
