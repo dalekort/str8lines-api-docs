@@ -1107,7 +1107,7 @@ Resources related to 3rd party cloud base storage solutions (e.g. OneDrive, Goog
 
 ### Group Authentication
 
-Each third party solution will have a different URIs to called. However, all the third party solutions provide Oauth2 authentication. Oauth2 provides an access token and a refresh token. The access token is used to determine access to the user's information. The access token generally expires in one hour. The refresh token is used to get a new access token. It generally expires after 90 days. The 'http://&lt;server&gt;/&lt;webapp&gt;/auth/onedrive' servlet stores the access token and the refresh token in a user's silo so that it can reference at a later time. The client will finally be redirect to 'http://&lt;server&gt;/&lt;webapp&gt;/siloDialog.html?siloUUID=&lt;siloUUID&gt;'.
+Each third party solution will have a different URIs to called. However, all the third party solutions provide Oauth2 authentication. Oauth2 provides an access token and a refresh token. The access token is used to determine access to the user's information. The access token generally expires in one hour. The refresh token is used to get a new access token. It generally expires after 90 days. The 'http://&lt;server&gt;/&lt;webapp&gt;/auth/onedrive' servlet stores the access token and the refresh token in a user's silo so that it can reference at a later time. The client will finally be redirect to 'http://&lt;server&gt;/&lt;webapp&gt;/siloDialog.jsp?siloUUID=&lt;siloUUID&gt;'.
 
 
 #### OneDrive for Personal
