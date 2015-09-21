@@ -613,6 +613,36 @@ A Class object has the following attributes:
                 "success": "true"
             }
 
+
+## Group FOLDERS
+
+Resources related to folders
+
+## Folder [/folder]
+
+A Folder object has the following attributes:
+
++ uuid - the unique identifier of this time period in the database
++ type (string) - The type of folder
++ name (string) - The name of the folder
++ s8_parent_folder (string) - The parent folder
++ visible_to_folder - The visibility of the folder (brand, company, division, user)
+
+## Create Folder [POST /domain/create] 
+
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "name":"Sub Folder",
+                "s8_parent_folder": "111.222.333",  //uuid of parent folder (optional)
+                "type":"s8_folder",
+                "visible_to_folder":  [ ]           // uuid of access items (optional)
+            }
+
 ## Group PROJECT MANAGEMENT
 
 Resources related to the project management capabilities
