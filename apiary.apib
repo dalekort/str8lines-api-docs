@@ -638,7 +638,7 @@ A Folder object has the following attributes:
 
             {
                 "name":"Sub Folder",
-                "s8_parent_folder": "111.222.333",  //uuid of parent folder (optional)
+                "s8_folder_parent": "111.222.333",  //uuid of parent folder (optional)
                 "type":"s8_folder",
                 "visible_to_folder":  [ ]           // uuid of access items (optional)
             }
@@ -693,7 +693,7 @@ A Task object has the following attributes:
     + "startnoearlierthan"
     + "startnolaterthan"
 
-## Get Available Project [GET /proj/get] 
+## Get Projects [GET /proj/get] 
 
 
 + Response 200 (application/json)
@@ -713,6 +713,55 @@ A Task object has the following attributes:
                         "effort"                : 0,
                         "type"                  : "project"
                     }
+                ],
+                "success":"true"
+            }
+            
+## Get Project Templates [GET /template/get] 
+
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                data: [
+                    {
+                        duration: 0,
+                        manually_scheduled: false,
+                        name: "Project Template A",
+                        history: [
+                                {
+                                    name: "87306",
+                                    details: [
+                                        {
+                                            name: "87309",
+                                            history_type: "CREATED",
+                                            type: "s8_history",
+                                            uuid: "87309"
+                                        }
+                                    ],
+                                    type: "s8_history_group"
+                                    user: {
+                                        office_phone: "(+1) 253 219 2569",
+                                        theme_mode: "",
+                                        mobile_phone: "(+1) 253 219 2569",
+                                        last_name: "Guy",
+                                        active: true,
+                                        theme: "",
+                                        type: "s8_user",
+                                        uuid: "2690.2689.2690",
+                                        first_name: "Big",
+                                        companyAdmin: true,
+                                        email: "admin.arriba@str8lines.com"
+                                    },
+                                    uuid: "87306"
+                                }
+                        ],
+                        type: "project_template"
+                        uuid: "87302.2689.81131"
+                }
                 ],
                 "success":"true"
             }
@@ -822,7 +871,8 @@ A Task object has the following attributes:
                             "end_date": "2010-02-18T00:00:00-05:00",
                             "duration": 273,
                             "pct_done": 50.33,
-                            "name:" "Investigation"
+                            "name:" "Investigation",
+                            "folder_content": "111.222.333"        // optional - composite uuid of folder to move to 
                         }
                     ],
                     "added": [
@@ -902,7 +952,7 @@ A Task object has the following attributes:
                 "tasks": []         // will contain added tasks with uuids (updates/deletes will not be included)
             }
 
-## Add Project [POST /domain/create] 
+## Add Project [POST /domain/create?foo=1] 
 
 + Request (application/json)
 
@@ -933,7 +983,7 @@ A Task object has the following attributes:
                 "success": "true"
             }
             
-## Add Project Template [POST /domain/create?] 
+## Add Project Template [POST /domain/create?foo=2] 
 
 + Request (application/json)
 
@@ -942,7 +992,8 @@ A Task object has the following attributes:
             {
                 "name": "New Template",
                 "visible_to": [ 401 ],
-                "type": "project_template"
+                "type": "project_template",
+                "folder_content": "111.222.333"       /// optional - uuid of folder to add to
             }
 
 + Response 200 (application/json)
