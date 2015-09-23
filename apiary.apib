@@ -248,6 +248,43 @@ A Silo object has the following attributes:
                 "success": "true"
             }
             
+## Group DOMAIN
+
+Resources related to domain functions in the API.
+
+
+### History 
+
+A History object has the following attributes:
+
++ uuid - the unique identifier of this item in the database
++ timeStamp - the date/time the change was made
++ undo - whether or not hte change can be undone
++ log - the string of 'what was changed' to be presented to the user
++ timeDelta - the relative time as to when the change was made
++ userName - the full name of the user that made the change
+
+
+#### Get history for a given record [GET /domain/history/get/{uuid}]
+
+
++ Response 200 (application/json)
+
+        {
+            data: [
+                {
+                    timeStamp: "Wed, 23 Sep 2015 14:33:08 GMT",
+                    undo: false,
+                    log: "app$history$created",
+                    timeDelta: "9 hours ago",
+                    userName: "Guy, Big",
+                    uuid: "82518"
+                }
+            ],
+            success: "true"        
+        }
+
+
 
 ## Group USER
 
@@ -738,30 +775,12 @@ A Task object has the following attributes:
                         },
                         history: [
                                 {
-                                    name: "87306",
-                                    details: [
-                                        {
-                                            name: "87309",
-                                            history_type: "CREATED",
-                                            type: "s8_history",
-                                            uuid: "87309"
-                                        }
-                                    ],
-                                    type: "s8_history_group"
-                                    user: {
-                                        office_phone: "(+1) 253 219 2569",
-                                        theme_mode: "",
-                                        mobile_phone: "(+1) 253 219 2569",
-                                        last_name: "Guy",
-                                        active: true,
-                                        theme: "",
-                                        type: "s8_user",
-                                        uuid: "2690.2689.2690",
-                                        first_name: "Big",
-                                        companyAdmin: true,
-                                        email: "admin.arriba@str8lines.com"
-                                    },
-                                    uuid: "87306"
+                                    timeStamp: "Wed, 23 Sep 2015 14:33:08 GMT",
+                                    undo: false,
+                                    log: "Created",
+                                    timeDelta: "4 hours ago",
+                                    userName: "Guy, Big",
+                                    uuid: "82518"
                                 }
                         ],
                         type: "project_template"
