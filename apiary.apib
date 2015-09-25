@@ -754,6 +754,40 @@ A Task object has the following attributes:
                 "success":"true"
             }
             
+            
+## Get Project/Project Template Details [GET /domain/details/get/{uuid}] 
+
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": [
+                    {
+                        duration: 0,
+                        created: "1443052329379",
+                        manually_scheduled: false,
+                        baseline_pct_done: 0,
+                        name: "Project A",
+                        description: "A project",
+                        pct_done: 0,
+                        modified: "1443052329379",
+                        effort: 0,
+                        type: "project",
+                        uuid: "82265.2689.81131",
+                        status: {
+                            name: "active",
+                            type: "s8_state",
+                            uuid: "81232"
+                        }
+                    }
+                ],
+                "success":"true"
+            }
+            
+            
 ## Get Project Templates [GET /template/get] 
 
 
@@ -810,7 +844,7 @@ A Task object has the following attributes:
                 "success":"true"
             }
             
-## Get Project Details [GET /proj/get/{uuid}] 
+## Get Dependencies, Assignments, Resources, and Tasks [GET /proj/get/{uuid}] 
 
 
 + Response 200 (application/json)
