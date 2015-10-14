@@ -754,6 +754,46 @@ A Task object has the following attributes:
                 "success":"true"
             }
             
+## Get Flat List of Projects [GET /proj/flatList] 
+
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": [
+                    {
+                        "created": "1444747798298",
+                        "pct_done": 0,
+                        "index": 0,
+                        "effort": 0,
+                        "scheduling_mode": "Normal",
+                        "leaf": false,
+                        "type": "project",
+                        "duration_unit": "d",
+                        "uuid": "99986.2689.36531",
+                        "duration": 0,
+                        "expanded": true,
+                        "_primary_image": {},
+                        "children": [],
+                        "manually_scheduled": false,
+                        "baseline_pct_done": 0,
+                        "name": "Project 100",
+                        "modified": "1444776063313",
+                        "Id": "99986.2689.36531",
+                        "status": {
+                            "_primary_image": {},
+                            "name": "Inactive",
+                            "type": "s8_state",
+                            "uuid": "99933"
+                        }
+                    }
+                ],
+                "success": "true"
+            }
+                    
             
 ## Get Project/Project Template Details [GET /domain/details/get/{uuid}] 
 
@@ -786,7 +826,6 @@ A Task object has the following attributes:
                 ],
                 "success":"true"
             }
-            
             
 ## Get Project Templates [GET /template/get] 
 
@@ -919,6 +958,134 @@ A Task object has the following attributes:
                 "success":"true"
             }
             
+
+## Get Flat List of Projects [GET /proj/tasks/flatList] 
+
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": {
+                    "tasks": [
+                        {
+                            "name": "New Task",
+                            "manually_scheduled": false,
+                            "index": 0,
+                            "start_date": "1444775786419",
+                            "_primary_image": {},
+                            "pct_done": 0,
+                            "Id": "99995.2689.36694",
+                            "leaf": false,
+                            "duration": 1,
+                            "created": "1444775973441",
+                            "effort": 0,
+                            "expanded": true,
+                            "end_date": "1444775786419",
+                            "modified": "1444776025566",
+                            "baseline_pct_done": 0,
+                            "children": [
+                                {
+                                    "name": "New Task2",
+                                    "manually_scheduled": false,
+                                    "index": 0,
+                                    "start_date": "1444775786419",
+                                    "_primary_image": {},
+                                    "pct_done": 0,
+                                    "Id": "100005.2689.36694",
+                                    "leaf": false,
+                                    "duration": 1,
+                                    "created": "1444776025566",
+                                    "effort": 0,
+                                    "expanded": true,
+                                    "end_date": "1444775786419",
+                                    "modified": "1444776025566",
+                                    "baseline_pct_done": 0,
+                                    "children": [],
+                                    "type": "task",
+                                    "duration_unit": "d",
+                                    "scheduling_mode": "Normal",
+                                    "uuid": "100005.2689.36694"
+                                }
+                            ],
+                            "type": "task",
+                            "duration_unit": "d",
+                            "scheduling_mode": "Normal",
+                            "uuid": "99995.2689.36694"
+                        },
+                        {
+                            "name": "New Task2",
+                            "manually_scheduled": false,
+                            "index": 0,
+                            "start_date": "1444775786419",
+                            "_primary_image": {},
+                            "pct_done": 0,
+                            "Id": "100005.2689.36694",
+                            "leaf": false,
+                            "duration": 1,
+                            "created": "1444776025566",
+                            "effort": 0,
+                            "expanded": true,
+                            "end_date": "1444775786419",
+                            "modified": "1444776025566",
+                            "baseline_pct_done": 0,
+                            "children": [],
+                            "type": "task",
+                            "duration_unit": "d",
+                            "scheduling_mode": "Normal",
+                            "uuid": "100005.2689.36694"
+                        },
+                        {
+                            "name": "New Task3",
+                            "manually_scheduled": false,
+                            "index": 0,
+                            "start_date": "1444775786419",
+                            "_primary_image": {},
+                            "pct_done": 0,
+                            "Id": "100015.2689.36694",
+                            "leaf": false,
+                            "duration": 2,
+                            "created": "1444776063171",
+                            "effort": 0,
+                            "expanded": true,
+                            "end_date": "1444775786419",
+                            "modified": "1444776063171",
+                            "baseline_pct_done": 0,
+                            "children": [],
+                            "type": "task",
+                            "duration_unit": "d",
+                            "scheduling_mode": "Normal",
+                            "uuid": "100015.2689.36694"
+                        }
+                    ],
+                    "projects": [
+                        {
+                            "name": "Project 100",
+                            "manually_scheduled": false,
+                            "index": 0,
+                            "_primary_image": {},
+                            "pct_done": 0,
+                            "Id": "99986.2689.36531",
+                            "leaf": false,
+                            "duration": 0,
+                            "created": "1444747798298",
+                            "effort": 0,
+                            "expanded": true,
+                            "modified": "1444776063313",
+                            "baseline_pct_done": 0,
+                            "children": [],
+                            "type": "project",
+                            "duration_unit": "d",
+                            "scheduling_mode": "Normal",
+                            "uuid": "99986.2689.36531"
+                        }
+                    ]
+                },
+                "success": "true"
+            }
+
 
 ## Update Schedule [POST /proj/update] 
 
