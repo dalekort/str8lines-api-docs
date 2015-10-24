@@ -1246,17 +1246,19 @@ A Task object has the following attributes:
                 "success": "true"
             }
             
-## Add Project Template [POST /domain/create?foo=2] 
+## Add Project Template [POST /domain/create] 
 
 + Request (application/json)
 
     + Body
     
             {
-                "name": "New Template",
-                "visible_to": [ 401 ],
+                "name": "t1",
+                "description": "d1",
+                "status": "",
+                "id": "Str8lines_desktop.model.DynamicGridModelext-332-2",
                 "type": "project_template",
-                "folder_content": "111.222.333"       /// optional - uuid of folder to add to
+                "folder_content": "82225.2689.4352"
             }
 
 + Response 200 (application/json)
@@ -1265,9 +1267,51 @@ A Task object has the following attributes:
     + Body
 
             {
-                "data": [ 
+                "data": [
                     {
-                        "uuid": 500
+                        "allow_dependencies": true,
+                        "s8_folder": {
+                            "_primary_image": {},
+                            "children": [],
+                            "uuid": "82225.2689.4352"
+                        },
+                        "created": "1445704008987",
+                        "pct_done": 0,
+                        "index": 0,
+                        "description": "d1",
+                        "effort": 0,
+                        "history": [
+                            {
+                                "timeStamp": "Oct 24, 2015 6:26 PM",
+                                "image": {
+                                    "_file_url": {}
+                                },
+                                "undo": false,
+                                "log": "Created ",
+                                "timeDelta": "a few mins ago",
+                                "userName": ", ",
+                                "uuid": "109220"
+                            }
+                        ],
+                        "scheduling_mode": "Normal",
+                        "leaf": false,
+                        "type": "project_template",
+                        "duration_unit": "d",
+                        "uuid": "109213.2689.81131",
+                        "duration": 0,
+                        "expanded": true,
+                        "_primary_image": {},
+                        "children": [],
+                        "manually_scheduled": false,
+                        "baseline_pct_done": 0,
+                        "name": "t1",
+                        "modified": "1445704008987",
+                        "Id": "109213.2689.81131",
+                        "status": {
+                            "_primary_image": {},
+                            "type": "s8_state",
+                            "uuid": "81232"
+                        }
                     }
                 ],
                 "success": "true"
