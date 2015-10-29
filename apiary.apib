@@ -679,7 +679,241 @@ A Folder object has the following attributes:
                 "type":"s8_folder",
                 "visible_to_folder":  [ "5555.222.444"]  // array containing uuid(s) of access items (optional)
             }
+            
+## Group SCHEDULED MEETINGS
 
+Resources related to scheduled meetings
+
+## Scheduled Meeting [/meeting]
+
+A Scheduled Meeting object has the following attributes:
+
++ uuid
++ type
++ organizer (IUserDO)- user who created meeting
++ attendee (IUserDO) - users that attend meeting
++ subject (String) - Subject of meeting
++ description (String) - Description of meeting
++ location (String) - Location where meeting will take place
++ start_date (Long) - Start date of meeting in milliseconds
++ end_date (Long) - End date of meeting in milliseconds
+
+## Create Scheduled Meeting [POST /meeting/create] 
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "organizer": "2690.2689.2690",
+                "attendee": [
+                    "13877.2689.13877",
+                    "14111.2689.14111"
+                ],
+                "description": "testing meeting stuff . This is description",
+                "start_date": 1359760320000,
+                "end_date": 1359720720000,
+                "location": "conference room",
+                "subject": "Test meetings",
+                "type": "scheduled_meeting"
+            }
+        
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": [{
+                    "end_date": "1359720720000",
+                    "subject": "Test meetings",
+                    "attendees": [{
+                        "office_phone": "",
+                        "theme_mode": "",
+                        "mobile_phone": "",
+                        "last_name": "Vava",
+                        "active": false,
+                        "theme": "",
+                        "type": "s8_user",
+                        "uuid": "13877.2689.13877",
+                        "first_name": "Fotini",
+                        "companyAdmin": false,
+                        "email": "fotini.vava@str8lines.com"
+                    }, {
+                        "office_phone": "",
+                        "theme_mode": "",
+                        "mobile_phone": "",
+                        "last_name": "Lewis",
+                        "active": true,
+                        "theme": "",
+                        "type": "s8_user",
+                        "uuid": "14111.2689.14111",
+                        "first_name": "Darcy",
+                        "companyAdmin": false,
+                        "email": "darcy.lewis@str8lines.com"
+                    }],
+                    "created": "1446116055773",
+                    "description": "testing meeting stuff . This is description",
+                    "type": "scheduled_meeting",
+                    "uuid": "114467.2689.114369",
+                    "_primary_image": {},
+                    "organizer": {
+                        "office_phone": "(+1) 253 219 2569",
+                        "theme_mode": "",
+                        "mobile_phone": "(+1) 253 219 2569",
+                        "last_name": "Guy",
+                        "active": true,
+                        "theme": "",
+                        "type": "s8_user",
+                        "uuid": "2690.2689.2690",
+                        "first_name": "Big",
+                        "companyAdmin": true,
+                        "email": "admin.arriba@str8lines.com"
+                    },
+                    "name": "114467",
+                    "modified": "1446116055773",
+                    "location": "conference room",
+                    "start_date": "1359760320000",
+                    "status": {
+                        "_primary_image": {},
+                        "created": "1446115870414",
+                        "name": "init",
+                        "modified": "1446115870414",
+                        "type": "s8_state",
+                        "uuid": "114397"
+                    }
+                }],
+                "success": "true"
+            }
+        
+## Read Scheduled Meeting  [GET /meeting/get/{userUUID}] 
+
++ Parameters
+    + userUUID (long)
+
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": [{
+                    "end_date": "1420200720000",
+                    "subject": "Test meetings",
+                    "attendees": [],
+                    "created": "1446114051027",
+                    "description": "testing meeting stuff . This is description",
+                    "type": "scheduled_meeting",
+                    "uuid": "114467.2689.114369",
+                    "_primary_image": {},
+                    "organizer": {
+                        "office_phone": "(+1) 253 219 2569",
+                        "theme_mode": "",
+                        "mobile_phone": "(+1) 253 219 2569",
+                        "last_name": "Guy",
+                        "active": true,
+                        "theme": "",
+                        "type": "s8_user",
+                        "uuid": "2690.2689.2690",
+                        "first_name": "Big",
+                        "companyAdmin": true,
+                        "email": "admin.arriba@str8lines.com"
+                    },
+                    "name": "114467",
+                    "modified": "1446114198732",
+                    "location": "conference room",
+                    "start_date": "1420114320000",
+                    "status": {
+                        "_primary_image": {},
+                        "name": "init",
+                        "type": "s8_state",
+                        "uuid": "114397"
+                    }
+                }],
+                "success": "true"
+            }
+         
+## Edit Scheduled Meeting [POST /meeting/edit/{meetingUUID}] 
+
++ Parameters
+    + meetingUUID (long)
++ Request
+
+
+    + Body
+
+            {
+                "start_date": 1420114320000,
+                "end_date": 1420200720000
+            }
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": [{
+                    "end_date": "1420200720000",
+                    "subject": "Test meetings",
+                    "attendees": [{
+                        "office_phone": "",
+                        "theme_mode": "",
+                        "mobile_phone": "",
+                        "last_name": "",
+                        "active": false,
+                        "theme": "",
+                        "type": "s8_user",
+                        "uuid": "14111.2689.14111",
+                        "first_name": "",
+                        "companyAdmin": false,
+                        "email": "darcy.lewis@str8lines.com"
+                    }, {
+                        "office_phone": "",
+                        "theme_mode": "",
+                        "mobile_phone": "",
+                        "last_name": "",
+                        "active": false,
+                        "theme": "",
+                        "type": "s8_user",
+                        "uuid": "13877.2689.13877",
+                        "first_name": "",
+                        "companyAdmin": false,
+                        "email": "fotini.vava@str8lines.com"
+                    }],
+                    "created": "1446116055773",
+                    "description": "testing meeting stuff . This is description",
+                    "type": "scheduled_meeting",
+                    "uuid": "114467.2689.114369",
+                    "_primary_image": {},
+                    "organizer": {
+                        "office_phone": "",
+                        "theme_mode": "",
+                        "mobile_phone": "",
+                        "last_name": "",
+                        "active": false,
+                        "theme": "",
+                        "type": "s8_user",
+                        "uuid": "2690.2689.2690",
+                        "first_name": "",
+                        "companyAdmin": false,
+                        "email": "admin.arriba@str8lines.com"
+                    },
+                    "name": "114467",
+                    "modified": "1446116055773",
+                    "location": "conference room",
+                    "start_date": "1420114320000",
+                    "status": {
+                        "_primary_image": {},
+                        "name": "init",
+                        "type": "s8_state",
+                        "uuid": "114397"
+                    }
+                }],
+                "success": "true"
+            }
+    
 ## Group PROJECT MANAGEMENT
 
 Resources related to the project management capabilities
