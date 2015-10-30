@@ -1421,9 +1421,11 @@ A Scheduled Meeting object has the following attributes:
             
 ## Read Scheduled Meeting  [GET /meeting/get]
 
+###This restcall returns meetings related to context user for period o 3 years( previous one, this and next)
+
+
 + Response 200 (application/json)
 
-This restcall returns meetings related to context user for period o 3 years( previous one, this and next)
     + Body
 
             {
@@ -1462,7 +1464,7 @@ This restcall returns meetings related to context user for period o 3 years( pre
                 }],
                 "success": "true"
             }
-         
+            
 ## Edit Scheduled Meeting [POST /meeting/update/{meetingUUID}] 
 
 + Parameters
