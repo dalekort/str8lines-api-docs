@@ -766,7 +766,7 @@ A Task object has the following attributes:
     + "startnoearlierthan"
     + "startnolaterthan"
 
-## Get Projects [GET /proj/get/{projUUID}] 
+## Get Project Dependencies, Assignments, Resources, and Tasks [GET /proj/get/{projUUID}] 
 
 + Parameters
     + projUUID (String)
@@ -1193,82 +1193,6 @@ A Task object has the following attributes:
                 "success":"true"
             }
             
-## Get Dependencies, Assignments, Resources, and Tasks [GET /proj/get/{uuid}] 
-
-
-+ Response 200 (application/json)
-
-
-    + Body
-
-            {
-            "dependencies": {
-                "rows" : [
-                    {
-                        "uuid"   : 1,
-                        "From" : 11,
-                        "To"   : 17
-                    }
-                ]
-            },
-             "assignments"  : {
-                "rows" : [
-                    {
-                        "uuid"         : 1,
-                        "TaskId"     : 11,
-                        "ResourceId" : 1,
-                        "units"      : 100
-                    }
-                ]
-            },
-            "resources" : {
-                "rows" : [
-                    {
-                        "uuid"   : 1,
-                        "Name" : "Mats"
-                    }
-                ]
-            },
-             "tasks" : {
-                "rows" : [
-                    {
-                        "uuid"                : 1000,
-                        "start_date"          : "2010-01-13",
-                        "end_date"            : "2010-02-13",
-                        "name"                : "Project A",
-                        "type"                : "project",
-                        "description"         : "Project A description",
-                        "manually_scheduled"  : true,
-                        "allow_dependencies"  : true,
-                        "css"                 : "projectIcon",
-                        "children"            : [
-                            {
-                                "baseline_end_date"   : "2010-02-01",
-                                "uuid"                : 1,
-                                "name"                : "Planning",
-                                "pct_done"            : 50,
-                                "start_date"          : "2010-01-18",
-                                "baseline_start_date" : "2010-01-13",
-                                "duration"            : 10,
-                                "children"            : [ ]
-                            }, {
-                                "baseline_end_date"   : "2010-01-28",
-                                "uuid"                : 11,
-                                "name"                : "Investigate",
-                                "pct_done"            : 50,
-                                "task_type"           : "meeting",
-                                "start_date"          : "2010-01-18",
-                                "baseline_start_date" : "2010-01-20",
-                                "segments"          : [ ]
-                                "children"          : [ ]
-                            }
-                        ]
-                    }
-                ],
-                "success":"true"
-            }
-            
-
 ## Get Flat List of Project Tasks [GET /proj/tasks/flatList?projects={projectUUID1},{projectUUID2},...] 
 
 
