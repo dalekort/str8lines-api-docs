@@ -29,6 +29,38 @@ A Company  has the following attributes:
 + uuid - the unique identifier of this item in the database
 + name - a unique name of this item in the database
 
+#### Add company background image [POST /company/addBackgroundImage]
+
++ Request (application/json)
+    + Body
+    
+            {
+                "_file_id": "679fc0c7-ee4c-4e3a-bf2b-41c96f2e868a",
+                "_file_name": "d219c0f9-4a88-49f2-8011-0e05c1faa69f"
+            }
+
++ Response 200 (application/json)
+
+        {
+            "data": {
+                "_file_type": "IMAGE",
+                "_file_uuid": "219206",
+                "file_signature": "",
+                "_server_id": "cloudinary5",
+                "_file_name": "d219c0f9-4a88-49f2-8011-0e05c1faa69f",
+                "name": "679fc0c7-ee4c-4e3a-bf2b-41c96f2e868a",
+                "_file_annotated": false,
+                "_file_url": {
+                    "thumbnail": "http:\/\/a5.images.str8lines.com\/image\/upload\/t_FormatThumbnail\/679fc0c7-ee4c-4e3a-bf2b-41c96f2e868a.",
+                    "original": "http:\/\/a5.images.str8lines.com\/image\/upload\/679fc0c7-ee4c-4e3a-bf2b-41c96f2e868a.",
+                    "large": "http:\/\/a5.images.str8lines.com\/image\/upload\/t_FormatLarge\/679fc0c7-ee4c-4e3a-bf2b-41c96f2e868a."
+                },
+                "_file_uri": "\/image\/upload\/",
+                "uuid": "219206.0.391"
+            },
+            "success": "true"
+        }
+
 ### Office 
 
 #### Get list of office countries [GET /office/countries]
