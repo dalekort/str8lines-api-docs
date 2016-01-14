@@ -2001,7 +2001,26 @@ A Task object has the following attributes:
                     ]
                 }
             }
-       
+
+## Delee Project [DELETE /proj/delete]
+
++ Request (application/json)
+
+    + Body
+    
+            {
+                "uuid": "184770.2689.36531"
+            }
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "data": null,
+                "success": "true"
+            }
+        
 ## Add Project Template [POST /domain/create] 
 
 + Request (application/json)
