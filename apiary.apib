@@ -77,21 +77,88 @@ A Company  has the following attributes:
             "data": null,
             "success": "true"
         }
-#### Get company hierarchy [GET /company/hie]
-
-+ Request (application/json)
-    + Body
-    
-            {
-                
-                "_theme_mode": "stretched"
-            }
+#### Get company hierarchy [GET /company/hierarchy]
 
 + Response 200 (application/json)
 
             {
-                "data": null,
-                "success": "true"
+                "children": [
+                    {
+                        "_theme_mode": "stretched",
+                        "country": null,
+                        "primaryImage": null,
+                        "city": null,
+                        "address2": null,
+                        "created": 1431696486944,
+                        "address1": null,
+                        "_activation_link_window": null,
+                        "active": null,
+                        "type": "s8_company",
+                        "uuid": "0.2689.0",
+                        "_label": "HOST",
+                        "s8_file": "/common/images/default.png",
+                        "_primary_image": {},
+                        "children": [
+                            {
+                                "s8_file": "/common/images/default.png",
+                                "children": [
+                                    {
+                                        "s8_file": "/common/images/default.png",
+                                        "children": [
+                                            {
+                                                "s8_file": "/common/images/default.png",
+                                                "name": "10f1c051-9b0d-47c0-b2f7-13a64a5bb131",
+                                                "active": true,
+                                                "type": "s8_department",
+                                                "leaf": true,
+                                                "uuid": "219216.0.349",
+                                                "_label": "10f1c051-9b0d-47c0-b2f7-13a64a5bb131"
+                                            }
+                                        ],
+                                        "name": "1ab04b67-56b4-4f5c-8e86-aa892795098e",
+                                        "active": true,
+                                        "type": "s8_division",
+                                        "uuid": "219215.0.345",
+                                        "_label": "1ab04b67-56b4-4f5c-8e86-aa892795098e"
+                                    },
+                                    {
+                                        "s8_file": "/common/images/default.png",
+                                        "children": [
+                                            {
+                                                "s8_file": "/common/images/default.png",
+                                                "name": "Default Department",
+                                                "active": null,
+                                                "type": "s8_department",
+                                                "leaf": true,
+                                                "uuid": "219213.0.349",
+                                                "_label": "Default Department"
+                                            }
+                                        ],
+                                        "name": "Default Division",
+                                        "active": null,
+                                        "type": "s8_division",
+                                        "uuid": "219211.0.345",
+                                        "_label": "Default Division"
+                                    }
+                                ],
+                                "name": "06f1f95f-1256-4076-ac3f-2bf7f3157310",
+                                "active": true,
+                                "type": "s8_brand",
+                                "uuid": "219209.0.342",
+                                "_label": "06f1f95f-1256-4076-ac3f-2bf7f3157310"
+                            }
+                        ],
+                        "phone": null,
+                        "_is_vendor": null,
+                        "name": "HOST",
+                        "modified": 1452763353621,
+                        "short_name": null,
+                        "state": null,
+                        "postal_code": null,
+                        "primary_contact": null,
+                        "web_site": null
+                    }
+                ]
             }
 
 
