@@ -766,10 +766,10 @@ A Task object has the following attributes:
     + "startnoearlierthan"
     + "startnolaterthan"
 
-## Get Project Dependencies, Assignments, Resources, and Tasks [GET /proj/get/{projUUID}] 
+## Get Project Dependencies, Assignments, Resources, and Tasks [GET /proj/get/{project_uuid}] 
 
 + Parameters
-    + projUUID (String)
+    + project_uuid (String)
     
 + Response 200 (application/json)
 
@@ -1463,6 +1463,539 @@ A Task object has the following attributes:
                 "success": "true"
             }
             
+## Update Project [POST /proj/update/{project_uuid}] 
+
++ Parameters
+    + project_uuid (String)
+
++ Request (application/json)
+
+    + Body
+            {
+    "type": "sync",
+    "requestId": 1452082977187,
+    "assignments": {
+        "added": [
+            {
+                "$PhantomId": "Gnt.model.Assignment-1",
+                "ResourceId": "13844.2689.13844",
+                "TaskId": "Gnt.examples.advanced.model.Task-3",
+                "Units": 100
+            },
+            {
+                "$PhantomId": "Gnt.model.Assignment-2",
+                "ResourceId": "2690.2689.2690",
+                "TaskId": "Gnt.examples.advanced.model.Task-4",
+                "Units": 100
+            },
+            {
+                "$PhantomId": "Gnt.model.Assignment-3",
+                "ResourceId": "14204.2689.14204",
+                "TaskId": "Gnt.examples.advanced.model.Task-2",
+                "Units": 100
+            }
+        ]
+    },
+    "dependencies": {
+        "added": [
+            {
+                "$PhantomId": "Gnt.model.Dependency-11",
+                "From": "Gnt.examples.advanced.model.Task-1",
+                "To": "Gnt.examples.advanced.model.Task-6",
+                "Type": 2,
+                "Lag": -2,
+                "LagUnit": "w",
+                "Cls": ""
+            }
+        ]
+    },
+    "tasks": {
+        "added": [
+            {
+                "PhantomId": "Gnt.examples.advanced.model.Task-1",
+                "parentId": "184770.2689.36531",
+                "index": 0,
+                "expanded": true,
+                "leaf": false,
+                "ShowInTimeline": false,
+                "type": "",
+                "name": "task1",
+                "start_date": "1452466800000",
+                "end_date": "1456441200000",
+                "duration": 34,
+                "duration_unit": "d",
+                "effort": null,
+                "effort_unit": "h",
+                "pct_done": 0,
+                "baseline_start_date": null,
+                "baseline_end_date": null,
+                "calendar_id": "",
+                "manually_scheduled": false,
+                "scheduling_mode": "Normal",
+                "constraint_type": "",
+                "task_type": "",
+                "Color": "",
+                "Cls": "",
+                "Note": "",
+                "ConstraintDate": null,
+                "BaselinePercentDone": 0,
+                "Rollup": false,
+                "PhantomParentId": null
+            },
+            {
+                "PhantomId": "Gnt.examples.advanced.model.Task-2",
+                "parentId": "184770.2689.36531",
+                "index": 1,
+                "expanded": false,
+                "leaf": true,
+                "ShowInTimeline": false,
+                "type": "",
+                "name": "task2",
+                "start_date": "1456873200000",
+                "end_date": "1458255600000",
+                "duration": 12,
+                "duration_unit": "d",
+                "effort": null,
+                "effort_unit": "h",
+                "pct_done": null,
+                "baseline_start_date": null,
+                "baseline_end_date": null,
+                "calendar_id": "",
+                "manually_scheduled": false,
+                "scheduling_mode": "",
+                "constraint_type": "",
+                "task_type": "",
+                "Color": "",
+                "Cls": "",
+                "Note": "",
+                "ConstraintDate": null,
+                "BaselinePercentDone": 0,
+                "Rollup": false,
+                "PhantomParentId": null
+            },
+            {
+                "PhantomId": "Gnt.examples.advanced.model.Task-3",
+                "parentId": "Gnt.examples.advanced.model.Task-1",
+                "index": 1,
+                "expanded": false,
+                "leaf": true,
+                "ShowInTimeline": false,
+                "type": "",
+                "name": "milestone1",
+                "start_date": "1453071600000",
+                "end_date": "1456441200000",
+                "duration": 29,
+                "duration_unit": "d",
+                "effort": null,
+                "effort_unit": "h",
+                "pct_done": null,
+                "baseline_start_date": null,
+                "baseline_end_date": null,
+                "calendar_id": "",
+                "manually_scheduled": false,
+                "scheduling_mode": "",
+                "constraint_type": "",
+                "task_type": "",
+                "Color": "",
+                "Cls": "",
+                "Note": "",
+                "ConstraintDate": null,
+                "BaselinePercentDone": 0,
+                "Rollup": false,
+                "PhantomParentId": "Gnt.examples.advanced.model.Task-1"
+            },
+            {
+                "PhantomId": "Gnt.examples.advanced.model.Task-4",
+                "parentId": "Gnt.examples.advanced.model.Task-1",
+                "index": 0,
+                "expanded": false,
+                "leaf": true,
+                "ShowInTimeline": false,
+                "type": "",
+                "name": "phase1",
+                "start_date": "1452466800000",
+                "end_date": "1452898800000",
+                "duration": 5,
+                "duration_unit": "d",
+                "effort": null,
+                "effort_unit": "h",
+                "pct_done": null,
+                "baseline_start_date": null,
+                "baseline_end_date": null,
+                "calendar_id": "",
+                "manually_scheduled": false,
+                "scheduling_mode": "",
+                "constraint_type": "",
+                "task_type": "",
+                "Color": "",
+                "Cls": "",
+                "Note": "",
+                "ConstraintDate": null,
+                "BaselinePercentDone": 0,
+                "Rollup": false,
+                "PhantomParentId": "Gnt.examples.advanced.model.Task-1"
+            },
+            {
+                "PhantomId": "Gnt.examples.advanced.model.Task-6",
+                "parentId": "184770.2689.36531",
+                "index": 2,
+                "expanded": false,
+                "leaf": true,
+                "ShowInTimeline": false,
+                "type": "",
+                "name": "task3",
+                "start_date": "1455231600000",
+                "end_date": "1455663600000",
+                "duration": 3,
+                "duration_unit": "d",
+                "effort": null,
+                "effort_unit": "h",
+                "pct_done": null,
+                "baseline_start_date": null,
+                "baseline_end_date": null,
+                "calendar_id": "",
+                "manually_scheduled": false,
+                "scheduling_mode": "",
+                "constraint_type": "",
+                "task_type": "",
+                "Color": "",
+                "Cls": "",
+                "Note": "",
+                "ConstraintDate": null,
+                "BaselinePercentDone": 0,
+                "Rollup": false,
+                "PhantomParentId": null
+            }
+        ],
+        "updated": [
+            {
+                "expanded": true,
+                "start_date": "1452466800000",
+                "end_date": "1458255600000",
+                "duration": 49,
+                "uuid": "184770.2689.36531"
+            }
+        ]
+    }
+}
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+    "assignments": {
+        "rows": [
+            {
+                "TaskId": "184788.2689.36694",
+                "created": "1452704535675",
+                "history": [],
+                "type": "assignment",
+                "uuid": "184815.2689.36877",
+                "Units": 100,
+                "_primary_image": {},
+                "ResourceId": "13844.2689.13844",
+                "name": "8iznapkh9v5a605l",
+                "modified": "1452704535675",
+                "Id": "184815.2689.36877",
+                "$PhantomId": "Gnt.model.Assignment-1",
+                "status": {
+                    "created": "1444797439755",
+                    "name": "active",
+                    "modified": "1444797439755",
+                    "history": [],
+                    "type": "s8_state",
+                    "uuid": "101423"
+                }
+            },
+            {
+                "TaskId": "184793.2689.36694",
+                "created": "1452704535707",
+                "history": [],
+                "type": "assignment",
+                "uuid": "184820.2689.36877",
+                "Units": 100,
+                "_primary_image": {},
+                "ResourceId": "2690.2689.2690",
+                "name": "i8e5tcrw1w30br84",
+                "modified": "1452704535707",
+                "Id": "184820.2689.36877",
+                "$PhantomId": "Gnt.model.Assignment-2",
+                "status": {
+                    "created": "1444797439755",
+                    "name": "active",
+                    "modified": "1444797439755",
+                    "history": [],
+                    "type": "s8_state",
+                    "uuid": "101423"
+                }
+            },
+            {
+                "TaskId": "184783.2689.36694",
+                "created": "1452704535727",
+                "history": [],
+                "type": "assignment",
+                "uuid": "184825.2689.36877",
+                "Units": 100,
+                "_primary_image": {},
+                "ResourceId": "14204.2689.14204",
+                "name": "g60kw401kcvvy5y9",
+                "modified": "1452704535727",
+                "Id": "184825.2689.36877",
+                "$PhantomId": "Gnt.model.Assignment-3",
+                "status": {
+                    "created": "1444797439755",
+                    "name": "active",
+                    "modified": "1444797439755",
+                    "history": [],
+                    "type": "s8_state",
+                    "uuid": "101423"
+                }
+            }
+        ]
+    },
+    "data": null,
+    "success": "true",
+    "visibleTos": {
+        "rows": []
+    },
+    "tasks": {
+        "rows": [
+            {
+                "end_date": "1456441200000",
+                "pct_done": 0,
+                "effort": 0,
+                "scheduling_mode": "Normal",
+                "type": "task",
+                "uuid": "184778.2689.36694",
+                "PhantomId": "Gnt.examples.advanced.model.Task-1",
+                "duration": 34,
+                "expanded": true,
+                "children": [],
+                "baseline_pct_done": 0,
+                "modified": "1452704535346",
+                "start_date": "1452466800000",
+                "created": "1452704535346",
+                "index": 0,
+                "history": [],
+                "leaf": false,
+                "duration_unit": "d",
+                "revision": "km8reo4w2h55tyaa",
+                "_primary_image": {},
+                "manually_scheduled": false,
+                "name": "task1",
+                "effort_unit": "h",
+                "Id": "184778.2689.36694",
+                "task_type": "task",
+                "status": {
+                    "created": "1444797439755",
+                    "name": "active",
+                    "modified": "1444797439755",
+                    "history": [],
+                    "type": "s8_state",
+                    "uuid": "101411"
+                }
+            },
+            {
+                "end_date": "1458255600000",
+                "pct_done": 0,
+                "effort": 0,
+                "scheduling_mode": "Normal",
+                "type": "task",
+                "uuid": "184783.2689.36694",
+                "PhantomId": "Gnt.examples.advanced.model.Task-2",
+                "duration": 12,
+                "expanded": false,
+                "children": [],
+                "baseline_pct_done": 0,
+                "modified": "1452704535380",
+                "start_date": "1456873200000",
+                "created": "1452704535380",
+                "index": 1,
+                "history": [],
+                "leaf": true,
+                "duration_unit": "d",
+                "revision": "khyjzfp296rsr4fk",
+                "_primary_image": {},
+                "manually_scheduled": false,
+                "name": "task2",
+                "effort_unit": "h",
+                "Id": "184783.2689.36694",
+                "task_type": "task",
+                "status": {
+                    "created": "1444797439755",
+                    "name": "active",
+                    "modified": "1444797439755",
+                    "history": [],
+                    "type": "s8_state",
+                    "uuid": "101411"
+                }
+            },
+            {
+                "end_date": "1456441200000",
+                "pct_done": 0,
+                "effort": 0,
+                "scheduling_mode": "Normal",
+                "type": "task",
+                "uuid": "184788.2689.36694",
+                "PhantomId": "Gnt.examples.advanced.model.Task-3",
+                "duration": 29,
+                "expanded": false,
+                "children": [],
+                "baseline_pct_done": 0,
+                "modified": "1452704535424",
+                "start_date": "1453071600000",
+                "created": "1452704535424",
+                "index": 1,
+                "history": [],
+                "leaf": true,
+                "duration_unit": "d",
+                "revision": "4yd5pd4gu60lquvw",
+                "_primary_image": {},
+                "manually_scheduled": false,
+                "name": "milestone1",
+                "effort_unit": "h",
+                "Id": "184788.2689.36694",
+                "task_type": "task",
+                "status": {
+                    "created": "1444797439755",
+                    "name": "active",
+                    "modified": "1444797439755",
+                    "history": [],
+                    "type": "s8_state",
+                    "uuid": "101411"
+                }
+            },
+            {
+                "end_date": "1452898800000",
+                "pct_done": 0,
+                "effort": 0,
+                "scheduling_mode": "Normal",
+                "type": "task",
+                "uuid": "184793.2689.36694",
+                "PhantomId": "Gnt.examples.advanced.model.Task-4",
+                "duration": 5,
+                "expanded": false,
+                "children": [],
+                "baseline_pct_done": 0,
+                "modified": "1452704535471",
+                "start_date": "1452466800000",
+                "created": "1452704535471",
+                "index": 0,
+                "history": [],
+                "leaf": true,
+                "duration_unit": "d",
+                "revision": "jpo1e955yz1kzdbs",
+                "_primary_image": {},
+                "manually_scheduled": false,
+                "name": "phase1",
+                "effort_unit": "h",
+                "Id": "184793.2689.36694",
+                "task_type": "task",
+                "status": {
+                    "created": "1444797439755",
+                    "name": "active",
+                    "modified": "1444797439755",
+                    "history": [],
+                    "type": "s8_state",
+                    "uuid": "101411"
+                }
+            },
+            {
+                "end_date": "1455663600000",
+                "pct_done": 0,
+                "effort": 0,
+                "scheduling_mode": "Normal",
+                "type": "task",
+                "uuid": "184798.2689.36694",
+                "PhantomId": "Gnt.examples.advanced.model.Task-6",
+                "duration": 3,
+                "expanded": false,
+                "children": [],
+                "baseline_pct_done": 0,
+                "modified": "1452704535512",
+                "start_date": "1455231600000",
+                "created": "1452704535512",
+                "index": 2,
+                "history": [],
+                "leaf": true,
+                "duration_unit": "d",
+                "revision": "rbh85cmqe9ard9b7",
+                "_primary_image": {},
+                "manually_scheduled": false,
+                "name": "task3",
+                "effort_unit": "h",
+                "Id": "184798.2689.36694",
+                "task_type": "task",
+                "status": {
+                    "created": "1444797439755",
+                    "name": "active",
+                    "modified": "1444797439755",
+                    "history": [],
+                    "type": "s8_state",
+                    "uuid": "101411"
+                }
+            },
+            {
+                "end_date": "1458255600000",
+                "allow_dependencies": true,
+                "pct_done": 0,
+                "effort": 0,
+                "scheduling_mode": "Normal",
+                "type": "project",
+                "uuid": "184770.2689.36531",
+                "duration": 49,
+                "expanded": true,
+                "bgColor": "#2951b9",
+                "children": [],
+                "baseline_pct_done": 0,
+                "modified": "1452704534973",
+                "start_date": "1452466800000",
+                "created": "1452704534973",
+                "editable": false,
+                "index": 0,
+                "history": [],
+                "leaf": false,
+                "duration_unit": "d",
+                "_primary_image": {},
+                "manually_scheduled": false,
+                "name": "4x1eyph586",
+                "Id": "184770.2689.36531",
+                "visibility_type": "s8_company"
+            }
+        ]
+    },
+    "dependencies": {
+        "rows": [
+            {
+                "LagUnit": "w",
+                "created": "1452704535656",
+                "history": [],
+                "From": "184778.2689.36694",
+                "type": "dependency",
+                "uuid": "184810.2689.36835",
+                "Type": 2,
+                "Lag": -2,
+                "_primary_image": {},
+                "name": "exam8a4jttlor7vw",
+                "modified": "1452704535656",
+                "Id": "184810.2689.36835",
+                "To": "184798.2689.36694",
+                "$PhantomId": "Gnt.model.Dependency-11",
+                "status": {
+                    "created": "1444797439755",
+                    "name": "active",
+                    "modified": "1444797439755",
+                    "history": [],
+                    "type": "s8_state",
+                    "uuid": "101417"
+                }
+            }
+        ]
+    }
+}
+       
 ## Add Project Template [POST /domain/create] 
 
 + Request (application/json)
