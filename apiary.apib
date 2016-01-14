@@ -1436,16 +1436,17 @@ A Task object has the following attributes:
 + Request (application/json)
 
     + Body
-    
             {
                 "name": "New Project",
-                "roles": [ 101, 102, 103 ],
-                "resources": [ 201, 202, 203 ],
-                "visible_to": [ 401 ],
-                "color": "#490390",
-                "image": { std primary image },
-                "type": "project"
-               
+                "type": "project",
+                "bgColor": "#2951b9",
+                "bgColorIndex": "19",
+                "visibility_type": "s8_company",
+                "resource": [
+                    "2690.2689.2690",
+                    "13844.2689.13844",
+                    "14204.2689.14204"
+                ]
             }
 
 + Response 200 (application/json)
