@@ -177,7 +177,136 @@ A Company  has the following attributes:
                 ]
             }
 
+#### Add brand to company [POST /company/addBrand]
 
++ Request (application/json)
+    + Body
+    
+            {
+                "s8_brand": {
+                    "type": "s8_brand",
+                    "name": "6070e0ca-ee8f-4f2a-949e-f091cc874afd",
+                    "s8_brand_division": [],
+                    "active": true
+                },
+                "related_image": [
+                    {
+                        "type": "image",
+                        "file_id": "08e23e1f-3c04-4860-aa13-8f8ca8095d3e",
+                        "file_name": "8db8726d-4f65-48e1-8a21-57607269db1f"
+                    }
+                ]
+            }
+
++ Response 200 (application/json)
+
+        {
+            "data":null,
+            "success":"true"
+        }
+#### Add division to brand [POST /company/addDivision]
+
++ Request (application/json)
+    + Body
+    
+            {
+                "s8_brand": {
+                    "type": "s8_brand",
+                    "uuid": "235500.0.342"
+                },
+                "s8_division": {
+                    "type": "s8_division",
+                    "name": "ca6dde18-afd8-4df5-803e-0dfe46e188e9",
+                    "active": true,
+                    "s8_division_department": [
+                        {
+                            "type": "s8_department",
+                            "name": "73a75f55-5870-4267-bede-b849b5150009",
+                            "direction": "to",
+                            "active": true
+                        }
+                    ]
+                },
+                "related_image": [
+                    {
+                        "type": "image",
+                        "file_id": "8d6a7440-ab81-4493-bcf1-706f4c6f6ef3",
+                        "file_name": "efdd1103-a44b-4d83-be7a-c84826d9534d"
+                    }
+                ]
+            }
+
++ Response 200 (application/json)
+
+        {
+            "data": [
+                {
+                    "created": "1452772399651",
+                    "name": "07fd950e-f0d1-4595-9a41-fa04f0d63440",
+                    "modified": "1452772399651",
+                    "active": true,
+                    "history": [],
+                    "type": "s8_brand",
+                    "uuid": "235500.0.342",
+                    "_unique_name": "vumhqzi3p9sg8mkx"
+                },
+                {
+                    "created": "1452772399774",
+                    "name": "ca6dde18-afd8-4df5-803e-0dfe46e188e9",
+                    "modified": "1452772399774",
+                    "active": true,
+                    "history": [],
+                    "type": "s8_division",
+                    "uuid": "235506.0.345",
+                    "_unique_name": "vumhqzi3p9sg8mkx~^~ca6dde18-afd8-4df5-803e-0dfe46e188e9"
+                },
+                {
+                    "created": "1452772399774",
+                    "name": "73a75f55-5870-4267-bede-b849b5150009",
+                    "modified": "1452772399774",
+                    "active": true,
+                    "history": [],
+                    "type": "s8_department",
+                    "uuid": "235507.0.349",
+                    "_unique_name": "0b1f552a7905tfbd~^~73a75f55-5870-4267-bede-b849b5150009"
+                }
+            ],
+            "success": "true"
+        }
+        
+#### Add department to division [POST /company/addDepartment]
+
++ Request (application/json)
+    + Body
+    
+            {
+                "s8_division": {
+                    "type": "s8_division",
+                    "uuid": "227361.0.345"
+                },
+                "s8_department": {
+                    "type": "s8_department",
+                    "name": "9ba4d0c7-a535-4efc-8772-bb7abbd08d42",
+                    "active": true
+                }
+            }
+
++ Response 200 (application/json)
+
+        {
+            "data": {
+                "created": "1452772098941",
+                "name": "9ba4d0c7-a535-4efc-8772-bb7abbd08d42",
+                "modified": "1452772098941",
+                "active": true,
+                "history": [],
+                "type": "s8_department",
+                "uuid": "227365.0.349",
+                "_unique_name": "0rvywoaze21y8d0d~^~9ba4d0c7-a535-4efc-8772-bb7abbd08d42"
+            },
+            "success": "true"
+        }
+                
 ### Office 
 
 #### Get list of office countries [GET /office/countries]
