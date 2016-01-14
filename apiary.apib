@@ -76,7 +76,46 @@ A Company  has the following attributes:
             "data":null,
             "success":"true"
         }
-        
+
+#### Add company image [POST /company/addImage]
+
++ Request (application/json)
+    + Body
+    
+            {
+                "_file_id": "67476383-56e3-4e86-a8e6-adcbdcfe4fd9",
+                "_file_name": "a7a55686-bf94-4d66-9737-d72145621fc5"
+            }
+
++ Response 200 (application/json)
+
+        {
+            "data":null,
+            "success":"true"
+        }
+
+#### Update company details [POST /company/update]
+
++ Request (application/json)
+    + Body
+    
+            {
+                "uuid": "0.2689.0",
+                "type": "s8_company",
+                "name": "663db6df-c74d-45a0-b246-e41aef13bd1f",
+                "web_site": "8c504bf7-f6e6-4bb2-9b67-e02c64f9e30b",
+                "address1": "acab2885-7a57-407f-8bea-7de46bd06cca",
+                "address2": "a66e1aa2-3ebd-4731-91ce-958e2f6a3368",
+                "city": "2d734256-64e5-4a31-aff4-f677b3f1069e",
+                "country": "fe60d68f-be9b-4f12-906b-29be2aee5d3f"
+            }
+
++ Response 200 (application/json)
+
+        {
+            "data":null,
+            "success":"true"
+        }
 #### Update company active background image [POST /company/updateActiveBackgroundImage]
 
 + Request (application/json)
