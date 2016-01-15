@@ -1743,7 +1743,88 @@ A Task object has the following attributes:
                 ],
                 "success": "true"
             }
-            
+
+## Get Project Template details [GET /proj/get/{template_uuid}] 
+
++ Parameters
+    + template_uuid (String)
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "assignments": {
+                    "rows": []
+                },
+                "data": null,
+                "success": "true",
+                "resources": {
+                    "rows": [
+                        {
+                            "Id": "144300.2689.48228",
+                            "leaf": false,
+                            "Name": "test role"
+                        },
+                        {
+                            "Id": "48903.2689.48228",
+                            "leaf": false,
+                            "Name": "Management"
+                        },
+                        {
+                            "Id": "48900.2689.48228",
+                            "leaf": false,
+                            "Name": "Technical Design"
+                        }
+                    ]
+                },
+                "visibleTos": {
+                    "rows": [
+                        "2689.-9223372036854775808.-9223372036854775808"
+                    ]
+                },
+                "tasks": {
+                    "rows": [
+                        {
+                            "allow_dependencies": true,
+                            "pct_done": 0,
+                            "description": "test descritpion",
+                            "effort": 0,
+                            "scheduling_mode": "Normal",
+                            "type": "project_template",
+                            "uuid": "191566.2689.81131",
+                            "expanded": true,
+                            "children": [],
+                            "baseline_pct_done": 0,
+                            "modified": "1452868898148",
+                            "created_by_uuid": "2690.2689.2690",
+                            "created": "1452868898148",
+                            "editable": false,
+                            "index": 0,
+                            "history": [],
+                            "leaf": false,
+                            "duration_unit": "d",
+                            "_primary_image": {},
+                            "manually_scheduled": false,
+                            "name": "43pywz26c3",
+                            "Id": "191566.2689.81131",
+                            "status": {
+                                "name": "Active",
+                                "history": [],
+                                "type": "s8_state",
+                                "uuid": "81232"
+                            }
+                        }
+                    ]
+                },
+                "dependencies": {
+                    "rows": []
+                }
+            }
+    
+    
+    
 ## Get Flat List of Project Tasks [GET /proj/tasks/flatList?projects={projectUUID1},{projectUUID2},...] 
 
 
