@@ -3084,6 +3084,158 @@ A Task object has the following attributes:
                 }
             }
 
+## View [/view]
+
+A View object has the following attributes:
+
++ uuid
++ type
++ commnets 
++ template_uuid (String) - view is always connected to template
++ visibility_type (String)
++ editable (boolean)
+
+## Create View [POST /domain/create] 
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "type": "view",
+                "name": "27zvatx2mn",
+                "comments": "",
+                "template_uuid": "191566.2689.81131",
+                "visibility_type": "s8_company",
+                "tasks": [
+                    "191572.2689.36694"
+                ]
+            }
+        
++ Response 200 (application/json)
+
+
+    + Body
+    
+            {
+                "data": [
+                    {
+                        "template_uuid": "191566.2689.81131",
+                        "created": "1452868902398",
+                        "editable": false,
+                        "pct_done": 0,
+                        "index": 0,
+                        "effort": 0,
+                        "history": [],
+                        "type": "view",
+                        "leaf": false,
+                        "uuid": "191639.2689.105900",
+                        "expanded": true,
+                        "_primary_image": {},
+                        "children": [
+                            {
+                                "pct_done": 0,
+                                "index": 0,
+                                "effort": 0,
+                                "history": [],
+                                "type": "task",
+                                "leaf": false,
+                                "uuid": "191572.2689.36694",
+                                "expanded": true,
+                                "_primary_image": {},
+                                "children": [],
+                                "baseline_pct_done": 0,
+                                "manually_scheduled": false,
+                                "Id": "191572.2689.36694"
+                            }
+                        ],
+                        "baseline_pct_done": 0,
+                        "manually_scheduled": false,
+                        "name": "27zvatx2mn",
+                        "modified": "1452868902398",
+                        "Id": "191639.2689.105900",
+                        "created_by_uuid": "2690.2689.2690",
+                        "status": {
+                            "created": "1445316032488",
+                            "name": "init",
+                            "modified": "1445316032488",
+                            "history": [],
+                            "type": "s8_state",
+                            "uuid": "105907"
+                        },
+                        "visibility_type": "s8_company"
+                    }
+                ],
+                "success": "true"
+            }
+
+## Get View List [GET /view/get]
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "data": [
+                    {
+                        "created": "1450732685507",
+                        "editable": true,
+                        "pct_done": 0,
+                        "index": 0,
+                        "effort": 0,
+                        "history": [],
+                        "type": "view",
+                        "leaf": false,
+                        "uuid": "152687.2689.105900",
+                        "expanded": true,
+                        "_primary_image": {},
+                        "children": [],
+                        "baseline_pct_done": 0,
+                        "manually_scheduled": false,
+                        "name": "Everyone View Created by Admin",
+                        "modified": "1450732685507",
+                        "Id": "152687.2689.105900",
+                        "created_by_uuid": "2690.2689.2690",
+                        "status": {
+                            "name": "init",
+                            "history": [],
+                            "type": "s8_state",
+                            "uuid": "105907"
+                        },
+                        "visibility_type": "s8_company"
+                    },
+                    {
+                        "created": "1452868902398",
+                        "editable": true,
+                        "pct_done": 0,
+                        "index": 0,
+                        "effort": 0,
+                        "history": [],
+                        "type": "view",
+                        "leaf": false,
+                        "uuid": "191639.2689.105900",
+                        "expanded": true,
+                        "_primary_image": {},
+                        "children": [],
+                        "baseline_pct_done": 0,
+                        "manually_scheduled": false,
+                        "name": "27zvatx2mn",
+                        "modified": "1452868902398",
+                        "Id": "191639.2689.105900",
+                        "created_by_uuid": "2690.2689.2690",
+                        "status": {
+                            "name": "init",
+                            "history": [],
+                            "type": "s8_state",
+                            "uuid": "105907"
+                        },
+                        "visibility_type": "s8_company"
+                    }
+                ],
+                "success": "true"
+            }
+
+
 ## Scheduled Meeting [/meeting]
 
 A Scheduled Meeting object has the following attributes:
