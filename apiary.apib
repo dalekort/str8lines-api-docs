@@ -682,7 +682,79 @@ A History object has the following attributes:
             success: "true"        
         }
 
+## Group TASKTYPE
 
+Resources related to task functions in the API.
+
+## Task Type [/taskType]
+
+A Task Type object has the following attributes:
+
++ bgColor - background color of Task type
++ bgColorIndex - background color index
++ name - the unique name of the task type
++ label - the label of the task type
+
+
+### Get all task types [GET /get]
+
++ Response 200 (application/json)
+
+    + Body
+
+           {
+                "data": [
+                    {
+                        "bgColor": "#fa7166",
+                        "name": "action_item",
+                        "bgColorIndex": "1",
+                        "label": "Action Item"
+                    },
+                    {
+                        "bgColor": "#a01a1a",
+                        "name": "deadline",
+                        "bgColorIndex": "3",
+                        "label": "Deadline"
+                    },
+                    {
+                        "bgColor": "#d5b816",
+                        "name": "gate",
+                        "bgColorIndex": "8",
+                        "label": "Gate"
+                    },
+                    {
+                        "bgColor": "#133897",
+                        "name": "meeting",
+                        "bgColorIndex": "20",
+                        "label": "Meeting"
+                    },
+                    {
+                        "bgColor": "#f88015",
+                        "name": "milestone",
+                        "bgColorIndex": "6",
+                        "label": "Milestone"
+                    },
+                    {
+                        "bgColor": "#7742a9",
+                        "name": "phase",
+                        "bgColorIndex": "14",
+                        "label": "Phase"
+                    },
+                    {
+                        "bgColor": "#64b9d9",
+                        "name": "task",
+                        "bgColorIndex": "24",
+                        "label": "Task"
+                    },
+                    {
+                        "bgColor": "#2e8f0c",
+                        "name": "travel",
+                        "bgColorIndex": "27",
+                        "label": "Travel"
+                    }
+                ],
+                "success": "true"
+            }
 
 ## Group USER
 
