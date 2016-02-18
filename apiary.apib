@@ -29,6 +29,27 @@ A Company  has the following attributes:
 + uuid - the unique identifier of this item in the database
 + name - a unique name of this item in the database
 
+
+#### Merge vendor [POST /company/vendor/merge]
+
++ Request (application/json)
+    + Body
+    
+            {
+              "_id": "B6R57gt/zfVivhWmbVSHGQ==",  //id of new vendor
+              "customer": "WvHqHaaShwpVkzjbVV1Nkw==", //id of customer
+              "email":"dale.kort@str8lines.com", //company user to merge with
+              "password":"str8l1n3s", //comapany user to merge with password 
+              "shouldCreateNewUser":true // should add new user to company to merge with
+            }
+
++ Response 200 (application/json)
+
+        {
+            "data": null,
+            "success": "true"
+        }
+        
 #### Add company background image [POST /company/addBackgroundImage]
 
 + Request (application/json)
@@ -3819,4 +3840,3 @@ List items in directory
                 ],
                 "success": "true"
             }
-
