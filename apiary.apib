@@ -702,6 +702,62 @@ A History object has the following attributes:
             ],
             success: "true"        
         }
+        
+## Group GRADE RULE
+
+Resources related to task functions in the API.
+
+### Add poms to grade rule [POST /graderule/add/pom]
+{
+    "_id": 190569, //id of grade rule
+    "pom_id": 20412, //id of pom after you want to insert documents (_id from pom object, not pom_id)
+    "poms": [ //list of poms to insert
+        {
+            "_id": 10224,
+            "critical": false,
+            "description": "WAISTBAND CIRCUMFERENCE - EXTENDED",
+            "name": "C204",
+            "graded": true,
+            "requisit": "required"
+        }
+    ]
+}
+
++ Response 200 (application/json)
+
+    + Body
+
+           {
+    "data": [
+        {
+            "pom_id": 10224,
+            "critical": false,
+            "description": "WAISTBAND CIRCUMFERENCE - EXTENDED",
+            "_L": {
+                "graded": null
+            },
+            "_M": {
+                "graded": null
+            },
+            "_XL": {
+                "graded": null
+            },
+            "_S": {
+                "graded": null
+            },
+            "name": "C204",
+            "graded": true,
+            "_id": 21017,
+            "_XS": {
+                "graded": null
+            },
+            "requisit": "required",
+            "tol_plus": null,
+            "tol_min": null
+        }
+    ],
+    "success": "true"
+}
 
 ## Group TASKTYPE
 
