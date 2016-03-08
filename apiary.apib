@@ -671,6 +671,22 @@ A Silo object has the following attributes:
 
 Resources related to domain functions in the API.
 
+### Style
+
+#### Update style season color[POST /style/color/season/update]
++ Request
+{
+  "_id":210336, //style id
+  "color":207632, //color id
+  "season":"Holiday_2018", //season id
+  "status":"Active" //new status value. Send null for removing color from season for a given style
+}
++ Response 200 (application/json)
+{
+"data": null
+"success": "true"
+}
+
 
 ### History 
 
