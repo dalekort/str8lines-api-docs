@@ -3619,6 +3619,47 @@ A Scheduled Meeting object has the following attributes:
                 "success": "true"
             }
     
+## Group SHARED CALENDAR 
+### Create shared calendar [POST /domain/create] 
+
++ Request
+
+    + Body
+
+            {
+                "name": "s1",
+                "type": "shared_calendar",
+                "bgColor": "#eda12a",
+                "bgColorIndex": "7",
+                "visibility_type": "user",
+                "visible_to": [
+                    205801,
+                    835802
+                ]
+            }
++ Response 200 (application/json)
+    {
+        "data": {
+            "bgColor": "#eda12a",
+            "visible_to": [
+                205801,
+                835802,
+                205801
+            ],
+            "created": "1457616641487",
+            "name": "s1",
+            "bgColorIndex": "7",
+            "_id": 837600,
+            "type": "shared_calendar",
+            "created_by": {
+                "name": "Muruga, Krish",
+                "_id": 205801
+            },
+            "visibility_type": "user"
+        },
+        "success": "true"
+    }
+
             
 ## Group USER INTERFACE
 
