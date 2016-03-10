@@ -3497,51 +3497,7 @@ A Scheduled Meeting object has the following attributes:
                 }],
                 "success": "true"
             }
-            
-## Read Scheduled Meeting  [GET /meeting/get]
 
-+ Response 200 (application/json)
-
-    + Body
-
-            {
-                "data": [{
-                    "end_date": "1420200720000",
-                    "subject": "Test meetings",
-                    "attendees": [],
-                    "created": "1446114051027",
-                    "description": "testing meeting stuff . This is description",
-                    "type": "scheduled_meeting",
-                    "shared_calendar":826518,
-                    "uuid": "114467.2689.114369",
-                    "_primary_image": {},
-                    "organizer": {
-                        "office_phone": "(+1) 253 219 2569",
-                        "theme_mode": "",
-                        "mobile_phone": "(+1) 253 219 2569",
-                        "last_name": "Guy",
-                        "active": true,
-                        "theme": "",
-                        "type": "s8_user",
-                        "uuid": "2690.2689.2690",
-                        "first_name": "Big",
-                        "companyAdmin": true,
-                        "email": "admin.arriba@str8lines.com"
-                    },
-                    "name": "114467",
-                    "modified": "1446114198732",
-                    "location": "conference room",
-                    "start_date": "1420114320000",
-                    "status": {
-                        "_primary_image": {},
-                        "name": "init",
-                        "type": "s8_state",
-                        "uuid": "114397"
-                    }
-                }],
-                "success": "true"
-            }
-            
 ## Edit Scheduled Meeting [POST /meeting/update/{meetingUUID}] 
 
 + Parameters
