@@ -718,6 +718,63 @@ A History object has the following attributes:
             ],
             success: "true"        
         }
+## Group SIZE RANGE
+
+Resources related to task functions in the API.
+
+### Get size ranges by active status [POST /sizerange/get/{active}]
+
++ Response 200 (application/json)
+
+    + Body
+
+            "data": [
+        {
+            "sizes": [
+                " _XS",
+                " _M",
+                " _L"
+            ],
+            "created": "1460986161461",
+            "name": "Man Shoes",
+            "active": true,
+            "_id": 1008028,
+            "base": " _M"
+        },
+        {
+            "sizes": [
+                " _S",
+                " _M"
+            ],
+            "created": "1460986161461",
+            "name": "Woman shoes",
+            "active": true,
+            "_id": 1008026,
+            "base": " _M"
+        }
+    ],
+    "success": "true"
+}
+
+### Update size range active status [POST /sizerange/update]
+{
+    "_id": 1008024, //id of size range
+    "active": false
+}
+
++ Response 200 (application/json)
+
+    + Body
+
+         {
+    "data": {
+        "active": false,
+        "_id": 1008024,
+        "type": "size_range"
+    },
+    "success": "true"
+}
+
         
 ## Group GRADE RULE
 
