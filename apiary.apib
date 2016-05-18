@@ -831,7 +831,76 @@ Resources related to task functions in the API.
     ],
     "success": "true"
 }
+### Copy grade rule [POST /graderule/copy]
+{
+    "_id": 190569, //id of grade rule
+}
 
++ Response 200 (application/json)
+
+    + Body
+
+        {
+  "data": {
+    "grading": "Incremental",
+    "created": "1463567191275",
+    "active": true,
+    "type": "grade_rule",
+    "size_class": "",
+    "created_by": {
+      "name": "Kort, Dale",
+      "_id": 1
+    },
+    "division": [
+      16844
+    ],
+    "poms": [
+    //..list of poms
+    ],
+    "system": "Imperial",
+    "sizes": [
+      "_3",
+      "_3.5",
+      "_4",
+      "_4.5",
+      "_5",
+      "_5.5",
+      "_6",
+      "_6.5",
+      "_7",
+      "_7.5",
+      "_8",
+      "_8.5",
+      "_9",
+      "_9.5",
+      "_10",
+      "_10.5",
+      "_11",
+      "_11.5",
+      "_12",
+      "_12.5",
+      "_13",
+      "_13.5",
+      "_14",
+      "_14.5"
+    ],
+    "ext-314": "",
+    "name": "g1",
+    "construction": "",
+    "_id": 91825,
+    "size_range": {
+      "display": "Accessories (3 - 15)",
+      "name": "Accessories (3 - 15)",
+      "data_type": "node",
+      "_id": 91225,
+      "id": "extModel271-1",
+      "value": 91225
+    },
+    "base": "_8"
+  },
+  "success": "true"
+}
+}
 ## Group TASKTYPE
 
 Resources related to task functions in the API.
