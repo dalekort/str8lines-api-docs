@@ -1163,6 +1163,85 @@ Resources related to task functions in the API.
   "success": "true"
 }
 }
+
+### Replace pom inside grade rule [POST /graderule/replace/pom]
+{
+"_id": 61227
+"pom_id" : 36403, //id of pom to be replaced
+"poms":[{"system":"imperial","grading":"relative","how_to_measure":"Laygarmentflat.Measurestraightdownfromseamtoedge/foldedline.","created":"1460407803612","name":"D017","description":"CUFF/RIB/HEM/TRIMHEIGHT","active":true,"_id":36813,"type":"point_of_measure","created_by":{"name":"Kort,
+Dale","_id":1},"display":"D017: CUFF/RIB/HEM/TRIMHEIGHT"}] //one element array containing replacement pom
+}
+
++ Response 200 (application/json)
+{
+  "data": {
+    "pom_id": 36813,
+    "_34": {
+      "graded": 0
+    },
+    "_56": {
+      "graded": 0
+    },
+    "_36": {
+      "graded": 0
+    },
+    "_58": {
+      "graded": 0
+    },
+    "critical": null,
+    "_38": {
+      "graded": 0
+    },
+    "description": "CUFF/RIB/HEM/TRIMHEIGHT",
+    "graded": null,
+    "_40": {
+      "graded": 0
+    },
+    "_42": {
+      "graded": 0
+    },
+    "tol_plus": null,
+    "_44": {
+      "graded": 0
+    },
+    "_24": {
+      "graded": 0
+    },
+    "_46": {
+      "graded": 0
+    },
+    "_26": {
+      "graded": 0
+    },
+    "_48": {
+      "graded": 0
+    },
+    "_28": {
+      "graded": 0
+    },
+    "name": "D017",
+    "_id": 103227,
+    "_50": {
+      "graded": 0
+    },
+    "requisit": null,
+    "_30": {
+      "graded": 0
+    },
+    "_52": {
+      "graded": 0
+    },
+    "tol_min": null,
+    "_32": {
+      "graded": 0
+    },
+    "_54": {
+      "graded": 0
+    }
+  },
+  "success": "true"
+}
+    + Body
 ## Group TASKTYPE
 
 Resources related to task functions in the API.
