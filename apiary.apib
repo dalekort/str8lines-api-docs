@@ -846,6 +846,109 @@ Resources related to domain functions in the API.
 "success": "true"
 }
 
+### Sample
+
+#### Create evaluation page comment template [POST /domain/create]
++Request
+{
+"name": "trla"
+"visible_to" : [0],
+"visibility_type" : "company",
+"type": "evaluation_comment_template",
+  "comments":"trla baba lan2"
+}
++ Response 200 (application/json)
+{
+  "data": {
+    "comments": "trla baba lan2",
+    "system": "imperial",
+    "grading": "relative",
+    "visible_to": [
+      0
+    ],
+    "created": "1463996822075",
+    "name": "trla",
+    "active": true,
+    "_id": 101725,
+    "type": "evaluation_comment_template",
+    "created_by": {
+      "name": "Kort, Dale",
+      "_id": 1
+    },
+    "visibility_type": "company"
+  },
+  "success": "true"
+} 
+
+#### List evaluation page comment tempaltes[GET /domain/list/evaluation_comment_template]
++ Response 200 (application/json)
+{
+  "data": [
+    {
+      "comments": "trla baba lan",
+      "visible_to": [
+        0
+      ],
+      "created": "1463996383829",
+      "name": "trla",
+      "_id": 100825,
+      "type": "evaluation_comment_template",
+      "created_by": {
+        "name": "Kort, Dale",
+        "_id": 1
+      },
+      "visibility_type": "company"
+    },
+    {
+      "comments": "trla baba lan2",
+      "visible_to": [
+        0
+      ],
+      "created": "1463996394937",
+      "name": "trla",
+      "_id": 100827,
+      "type": "evaluation_comment_template",
+      "created_by": {
+        "name": "Kort, Dale",
+        "_id": 1
+      },
+      "visibility_type": "company"
+    },
+    {
+      "comments": "trla baba lan2",
+      "visible_to": [
+        0
+      ],
+      "created": "1463996444176",
+      "name": "trla",
+      "_id": 100829,
+      "type": "evaluation_comment_template",
+      "created_by": {
+        "name": "Kort, Dale",
+        "_id": 1
+      }
+    },
+    {
+      "comments": "trla baba lan2",
+      "system": "imperial",
+      "grading": "relative",
+      "visible_to": [
+        0
+      ],
+      "created": "1463996822075",
+      "name": "trla",
+      "active": true,
+      "_id": 101725,
+      "type": "evaluation_comment_template",
+      "created_by": {
+        "name": "Kort, Dale",
+        "_id": 1
+      },
+      "visibility_type": "company"
+    }
+  ],
+  "success": "true"
+}
 
 ### History 
 
