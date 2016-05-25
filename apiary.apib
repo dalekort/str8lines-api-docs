@@ -671,8 +671,21 @@ A Silo object has the following attributes:
 
 Resources related to domain functions in the API.
 
-### Style
+#### Get available colors for style [GET /style/colors/_id]
 
++ Response 200 (application/json)
+{
+    "data": [
+        {
+            "nrf": "500",
+            "sub_type": "solid",
+            "name": "Cobalt Blue",
+            "_id": 28524,
+            "rgb": "{r: 0, g: 204, b: 255}"
+        }
+    ],
+    "success": "true"
+}
 #### Get available sizes for style [GET /style/sizes/_id]
 
 + Response 200 (application/json)
