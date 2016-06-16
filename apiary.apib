@@ -1333,7 +1333,7 @@ A Task Type object has the following attributes:
 
 Resources related to messages functions in the API.
 
-## Message [/message]
+## Message
 
 A Message object has the following attributes:
 
@@ -1347,7 +1347,7 @@ A Message object has the following attributes:
 + created_by - user creator (document with id and name)
 + created - timestamp when the message is created
 
-### Mark message as read or unread [POST /readMessage]
+### Mark message as read or unread [POST /message/readMessage]
 
 + Request (application/json)
 
@@ -1369,7 +1369,7 @@ A Message object has the following attributes:
             }
 
 
-### Get User Messages on all types [GET /userMessages]
+### Get User Messages on all types [GET /message/userMessages]
 
 + Response 200 (application/json)
 
