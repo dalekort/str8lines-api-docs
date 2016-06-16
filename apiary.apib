@@ -1329,9 +1329,83 @@ A Task Type object has the following attributes:
                 "success": "true"
             }
 
-## Group USER
+## Group MESSAGES
 
 Resources related to user functions in the API.
+
+## Message [/message]
+
+A Message object has the following attributes:
+
++ _id - the unique identifier of the messagee in the database
++ visibility_type - who can see the message (everyone or division or brand or tagged people)
++ parentId - id of object where the user made comment
++ parent_type - type of object where user made comment(Project, Style, Sample...)
++ text - text of message
++ type - always "message"
++ read_by - is array with user ids who read this message
++ created_by - user creator (document with id and name)
++ created - timestamp when the message is created
+
+### Mark message as read or unread [POST /readMessage]
+
++ Request (application/json)
+
+    + Body
+    
+            {
+              "messages":[98426], //array of messages
+              "is_read":false // read status true if user read, false if user marks message as unread
+            }
+
++ Response 200 (application/json)
+
+
+    + Body
+
+            {
+                "data": [],
+                "success": "true"
+            }
+
+
+### Get Users for Context Company [GET /userMessages]
+
++ Response 200 (application/json)
+
+    +Body
+        
+            {
+                "data": [
+                    {
+                        "name": "j",
+                        "messages": [
+                            {
+                                "is_read": false,
+                                "created": "1466000029140",
+                                "editable": false,
+                                "timeDelta": "17 hours ago",
+                                "_id": 98426,
+                                "text": "first messagee",
+                                "parent_type": "project",
+                                "type": "message",
+                                "created_by": {
+                                    "name": "Boskovic, Miroslav",
+                                    "_id": 6
+                                },
+                                "user": "Boskovic, Miroslav",
+                                "parentId": 98125,
+                                "visibility_type": "everyone"
+                            }
+                        ],
+                        "_id": 98125,
+                        "type": "project"
+                    }
+                ],
+                "success": "true"
+            }
+
+
 
 ## User [/user]
 
@@ -2124,30 +2198,128 @@ A Task object has the following attributes:
             {
                 "data": [
                     {
-                        "created": "1444747798298",
-                        "pct_done": 0,
-                        "index": 0,
-                        "effort": 0,
-                        "scheduling_mode": "Normal",
-                        "leaf": false,
+                        "bgColor": "#2951b9",
+                        "watch": false,
+                        "created": "1465825385590",
+                        "editable": true,
+                        "name": "j",
+                        "bgColorIndex": "19",
+                        "messages": [
+                            {
+                                "is_read": false,
+                                "created": "1466000029140",
+                                "editable": false,
+                                "timeDelta": "17 hours ago",
+                                "_id": 98426,
+                                "text": "first messagee",
+                                "parent_type": "project",
+                                "type": "message",
+                                "created_by": {
+                                    "name": "Boskovic, Miroslav",
+                                    "_id": 6
+                                },
+                                "user": "Boskovic, Miroslav",
+                                "parentId": 98125,
+                                "visibility_type": "everyone"
+                            }
+                        ],
+                        "_id": 98125,
                         "type": "project",
-                        "duration_unit": "d",
-                        "uuid": "99986.2689.36531",
-                        "duration": 0,
-                        "expanded": true,
-                        "_primary_image": {},
-                        "children": [],
-                        "manually_scheduled": false,
-                        "baseline_pct_done": 0,
-                        "name": "Project 100",
-                        "modified": "1444776063313",
-                        "Id": "99986.2689.36531",
-                        "status": {
-                            "_primary_image": {},
-                            "name": "Inactive",
-                            "type": "s8_state",
-                            "uuid": "99933"
-                        }
+                        "created_by": {
+                            "name": "Boskovic, Miroslav",
+                            "_id": 6
+                        },
+                        "visibility_type": "company"
+                    },
+                    {
+                        "bgColor": "#64b9d9",
+                        "name": "Canada",
+                        "bgColorIndex": "24",
+                        "_id": "holidays_Canada",
+                        "type": "holidays"
+                    },
+                    {
+                        "bgColor": "#64b9d9",
+                        "name": "Serbia",
+                        "bgColorIndex": "24",
+                        "_id": "holidays_Serbia",
+                        "type": "holidays"
+                    },
+                    {
+                        "bgColor": "#64b9d9",
+                        "name": "United States",
+                        "bgColorIndex": "24",
+                        "_id": "holidays_United_States",
+                        "type": "holidays"
+                    },
+                    {
+                        "grading": "relative",
+                        "created": "1459347960969",
+                        "editable": true,
+                        "bgColorIndex": "6",
+                        "active": true,
+                        "type": "shared_calendar",
+                        "created_by": {
+                            "name": "Kort, Dale",
+                            "_id": 1
+                        },
+                        "system": "imperial",
+                        "bgColor": "#f88015",
+                        "watch": true,
+                        "name": "Deployments",
+                        "_id": 25461,
+                        "visibility_type": "company"
+                    },
+                    {
+                        "grading": "relative",
+                        "created": "1459093863991",
+                        "editable": true,
+                        "bgColorIndex": "19",
+                        "active": true,
+                        "description": "",
+                        "type": "shared_calendar",
+                        "created_by": {
+                            "name": "Kort, Dale",
+                            "_id": 1
+                        },
+                        "system": "imperial",
+                        "bgColor": "#2951b9",
+                        "visible_to": [
+                            1,
+                            302,
+                            5
+                        ],
+                        "watch": true,
+                        "name": "Travel",
+                        "modified": "1461678743881",
+                        "_id": 25225,
+                        "visibility_type": "user"
+                    },
+                    {
+                        "grading": "relative",
+                        "created": "1459093803333",
+                        "editable": true,
+                        "bgColorIndex": "31",
+                        "active": true,
+                        "type": "shared_calendar",
+                        "created_by": {
+                            "name": "Kort, Dale",
+                            "_id": 1
+                        },
+                        "system": "imperial",
+                        "bgColor": "#3ea987",
+                        "watch": true,
+                        "name": "Vacations",
+                        "_id": 25072,
+                        "visibility_type": "company"
+                    },
+                    {
+                        "bgColor": "#eda12a",
+                        "editable": false,
+                        "name": "My calendar",
+                        "bgColorIndex": "7",
+                        "_id": "myCalendar",
+                        "type": "shared_calendar"
                     }
                 ],
                 "success": "true"
