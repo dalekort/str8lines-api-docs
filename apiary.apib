@@ -4346,6 +4346,58 @@ A Scheduled Meeting object has the following attributes:
         ],
         "success": "true"
     }
+## Group EXCEL INTERFACE
+
+Resources related to excel interface
+
+### EXCEL [/excel]
+
++ to be filled in...
+
+### Get Projects exported to excel [POST /projects/get]
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "data": {
+                    "data": "[80, 75,...],
+                    "success": true
+                },
+                "success": "true"
+            }
+            
+### Get Calendar Meetings exported to excel [POST /calendar/get]
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "data": {
+                    "data": "[80, 75,...],
+                    "success": true
+                },
+                "success": "true"
+            }
+            
+### Get Template excel [POST /template/get/{type}]
+
++ Parameters
+    + type (String)
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+                "data": {
+                    "data": "[80, 75,...],
+                    "success": true
+                },
+                "success": "true"
+            }
             
 ## Group USER INTERFACE
 
