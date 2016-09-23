@@ -859,6 +859,57 @@ Resources related to domain functions in the API.
 "success": "true"
 }
 
+#### Add dev style to style[POST /style/addDevStyle]
++ Request
+{
+  "_id":210336,\ style id
+}
++ Response 200 (application/json)
+{
+    "success": "true",
+    "data": {
+        "data": [
+            154842,
+            18449,
+            "",
+            "",
+            {},
+            {},
+            [
+                null,
+                "Concept Sample",
+                0,
+                "",
+                null,
+                null,
+                null,
+                null
+            ],
+            [
+                null,
+                "Detail Sample",
+                0,
+                "",
+                null,
+                null,
+                null,
+                null
+            ]
+        ]
+    }
+}
+
+#### Add dev style to style[GET /styleNumberBrandCheck/{_id}/{style_number}]
+
++ Response 200 (application/json)
+
+        {
+            "success": "true"
+            "data": {
+                "_id": "18443"
+            }-
+        }
+
 ### Sample
 
 #### Create evaluation page comment template [POST /domain/create]
@@ -1951,292 +2002,378 @@ A Task object has the following attributes:
     + Body
     
             {
-                {
-                "assignments": {
-                    "rows": [
-                        {
-                            "TaskId": "184793.2689.36694",
-                            "created": "1452704535707",
-                            "history": [],
-                            "type": "assignment",
-                            "uuid": "184820.2689.36877",
-                            "Units": 100,
-                            "_primary_image": {},
-                            "ResourceId": "2690.2689.2690",
-                            "name": "i8e5tcrw1w30br84",
-                            "modified": "1452704535707",
-                            "Id": "184820.2689.36877",
-                            "status": {
-                                "name": "active",
-                                "history": [],
-                                "type": "s8_state",
-                                "uuid": "101423"
-                            }
-                        },
-                        {
-                            "TaskId": "184788.2689.36694",
-                            "created": "1452704535675",
-                            "history": [],
-                            "type": "assignment",
-                            "uuid": "184815.2689.36877",
-                            "Units": 100,
-                            "_primary_image": {},
-                            "ResourceId": "13844.2689.13844",
-                            "name": "8iznapkh9v5a605l",
-                            "modified": "1452704535675",
-                            "Id": "184815.2689.36877",
-                            "status": {
-                                "name": "active",
-                                "history": [],
-                                "type": "s8_state",
-                                "uuid": "101423"
-                            }
-                        },
-                        {
-                            "TaskId": "184783.2689.36694",
-                            "created": "1452704535727",
-                            "history": [],
-                            "type": "assignment",
-                            "uuid": "184825.2689.36877",
-                            "Units": 100,
-                            "_primary_image": {},
-                            "ResourceId": "14204.2689.14204",
-                            "name": "g60kw401kcvvy5y9",
-                            "modified": "1452704535727",
-                            "Id": "184825.2689.36877",
-                            "status": {
-                                "name": "active",
-                                "history": [],
-                                "type": "s8_state",
-                                "uuid": "101423"
-                            }
-                        }
-                    ]
-                },
-                "data": null,
                 "success": "true",
-                "resources": {
-                    "rows": [
-                        {
-                            "Id": "2690.2689.2690",
-                            "leaf": false,
-                            "Name": "Guy, Big"
-                        },
-                        {
-                            "Id": "13844.2689.13844",
-                            "leaf": false,
-                            "Name": "McIny, Alexia"
-                        },
-                        {
-                            "Id": "14204.2689.14204",
-                            "leaf": false,
-                            "Name": "Fisser, Amy"
-                        }
-                    ]
-                },
-                "visibleTos": {
-                    "rows": [
-                        "2689.-9223372036854775808.-9223372036854775808"
-                    ]
-                },
-                "tasks": {
-                    "rows": [
-                        {
-                            "end_date": "1458255600000",
-                            "allow_dependencies": true,
-                            "pct_done": 0,
-                            "effort": 0,
-                            "scheduling_mode": "Normal",
-                            "type": "project",
-                            "uuid": "184770.2689.36531",
-                            "duration": 49,
-                            "expanded": true,
-                            "bgColor": "#2951b9",
-                            "children": [
-                                {
-                                    "end_date": "1456441200000",
-                                    "pct_done": 0,
-                                    "effort": 0,
-                                    "scheduling_mode": "Normal",
-                                    "type": "task",
-                                    "uuid": "184778.2689.36694",
-                                    "duration": 34,
-                                    "expanded": true,
-                                    "children": [
-                                        {
-                                            "end_date": "1452898800000",
-                                            "pct_done": 0,
-                                            "effort": 0,
-                                            "scheduling_mode": "Normal",
-                                            "type": "task",
-                                            "uuid": "184793.2689.36694",
-                                            "duration": 5,
-                                            "expanded": false,
-                                            "children": [],
-                                            "baseline_pct_done": 0,
-                                            "modified": "1452704535471",
-                                            "start_date": "1452466800000",
-                                            "created": "1452704535471",
-                                            "index": 0,
-                                            "history": [],
-                                            "leaf": true,
-                                            "duration_unit": "d",
-                                            "revision": "jpo1e955yz1kzdbs",
-                                            "_primary_image": {},
-                                            "manually_scheduled": false,
-                                            "name": "phase1",
-                                            "effort_unit": "h",
-                                            "Id": "184793.2689.36694",
-                                            "task_type": "task"
+                "data": {
+                    "success": "true",
+                    "data": null,
+                    "tasks": {
+                                "rows": [
+                                    {
+                                        "_id": 132955,
+                                        "name": "2016FARTW",
+                                        "type": "project",
+                                        "bgColor": "#ca7609",
+                                        "bgColorIndex": "5",
+                                        "visibility_type": "company",
+                                        "project_template": {
+                                            "_id": 132191,
+                                            "name": "ApparelDevelopmentCalendar"
                                         },
-                                        {
-                                            "end_date": "1456441200000",
-                                            "pct_done": 0,
-                                            "effort": 0,
-                                            "scheduling_mode": "Normal",
-                                            "type": "task",
-                                            "uuid": "184788.2689.36694",
-                                            "duration": 29,
-                                            "expanded": false,
-                                            "children": [],
-                                            "baseline_pct_done": 0,
-                                            "modified": "1452704535424",
-                                            "start_date": "1453071600000",
-                                            "created": "1452704535424",
-                                            "index": 1,
-                                            "history": [],
-                                            "leaf": true,
-                                            "duration_unit": "d",
-                                            "revision": "4yd5pd4gu60lquvw",
-                                            "_primary_image": {},
-                                            "manually_scheduled": false,
-                                            "name": "milestone1",
-                                            "effort_unit": "h",
-                                            "Id": "184788.2689.36694",
-                                            "task_type": "task"
-                                        }
-                                    ],
-                                    "baseline_pct_done": 0,
-                                    "modified": "1452704535346",
-                                    "start_date": "1452466800000",
-                                    "created": "1452704535346",
-                                    "index": 0,
-                                    "history": [],
-                                    "leaf": false,
-                                    "duration_unit": "d",
-                                    "revision": "km8reo4w2h55tyaa",
-                                    "_primary_image": {},
-                                    "manually_scheduled": false,
-                                    "name": "task1",
-                                    "effort_unit": "h",
-                                    "Id": "184778.2689.36694",
-                                    "task_type": "task"
-                                },
-                                {
-                                    "end_date": "1458255600000",
-                                    "pct_done": 0,
-                                    "effort": 0,
-                                    "scheduling_mode": "Normal",
-                                    "type": "task",
-                                    "uuid": "184783.2689.36694",
-                                    "duration": 12,
-                                    "expanded": false,
-                                    "children": [],
-                                    "baseline_pct_done": 0,
-                                    "modified": "1452704535380",
-                                    "start_date": "1456873200000",
-                                    "created": "1452704535380",
-                                    "index": 1,
-                                    "history": [],
-                                    "leaf": true,
-                                    "duration_unit": "d",
-                                    "revision": "khyjzfp296rsr4fk",
-                                    "_primary_image": {},
-                                    "manually_scheduled": false,
-                                    "name": "task2",
-                                    "effort_unit": "h",
-                                    "Id": "184783.2689.36694",
-                                    "task_type": "task"
-                                },
-                                {
-                                    "end_date": "1455663600000",
-                                    "pct_done": 0,
-                                    "effort": 0,
-                                    "scheduling_mode": "Normal",
-                                    "type": "task",
-                                    "uuid": "184798.2689.36694",
-                                    "duration": 3,
-                                    "expanded": false,
-                                    "children": [],
-                                    "baseline_pct_done": 0,
-                                    "modified": "1452704535512",
-                                    "start_date": "1455231600000",
-                                    "created": "1452704535512",
-                                    "index": 2,
-                                    "history": [],
-                                    "leaf": true,
-                                    "duration_unit": "d",
-                                    "revision": "rbh85cmqe9ard9b7",
-                                    "_primary_image": {},
-                                    "manually_scheduled": false,
-                                    "name": "task3",
-                                    "effort_unit": "h",
-                                    "Id": "184798.2689.36694",
-                                    "task_type": "task"
-                                }
-                            ],
-                            "baseline_pct_done": 0,
-                            "modified": "1452704535649",
-                            "start_date": "1452466800000",
-                            "created_by_uuid": "2690.2689.2690",
-                            "created": "1452704534973",
-                            "editable": false,
-                            "index": 0,
-                            "history": [],
-                            "leaf": false,
-                            "duration_unit": "d",
-                            "_primary_image": {},
-                            "manually_scheduled": false,
-                            "name": "4x1eyph586",
-                            "Id": "184770.2689.36531",
-                            "status": {
-                                "name": "active",
-                                "history": [],
-                                "type": "s8_state",
-                                "uuid": "101401"
-                            },
-                            "visibility_type": "s8_company"
-                        }
-                    ]
-                },
-                "dependencies": {
-                    "rows": [
-                        {
-                            "LagUnit": "w",
-                            "created": "1452704535656",
-                            "history": [],
-                            "From": "184778.2689.36694",
-                            "type": "dependency",
-                            "uuid": "184810.2689.36835",
-                            "Type": 2,
-                            "Lag": -2,
-                            "_primary_image": {},
-                            "name": "exam8a4jttlor7vw",
-                            "modified": "1452704535656",
-                            "Id": "184810.2689.36835",
-                            "To": "184798.2689.36694",
-                            "status": {
-                                "name": "active",
-                                "history": [],
-                                "type": "s8_state",
-                                "uuid": "101417"
+                                        "created_by": {
+                                            "name": "KortDale",
+                                            "_id": 1
+                                        },
+                                        "created": "1470751143186",
+                                        "scheduling_mode": "Normal",
+                                        "pct_done": 0,
+                                        "duration": 200,
+                                        "expanded": true,
+                                        "project_id": 132955,
+                                        "active": true,
+                                        "modified": "1470751239554",
+                                        "children": [
+                                            {
+                                                "_id": 132959,
+                                                "parentId": 132955,
+                                                "index": 0,
+                                                "expanded": true,
+                                                "leaf": false,
+                                                "ShowInTimeline": false,
+                                                "type": "task",
+                                                "name": "Pre-SeasonPlanning",
+                                                "duration": 32,
+                                                "duration_unit": "d",
+                                                "effort_unit": "h",
+                                                "pct_done": 0,
+                                                "calendar_id": "",
+                                                "manually_scheduled": false,
+                                                "scheduling_mode": "Normal",
+                                                "constraint_type": "",
+                                                "task_type": "phase",
+                                                "reference": "",
+                                                "reference_id": "",
+                                                "fx_date": "",
+                                                "Color": "",
+                                                "Cls": "",
+                                                "Note": "",
+                                                "BaselinePercentDone": 0,
+                                                "Rollup": false,
+                                                "project_id": 132955,
+                                                "created_by": {
+                                                    "name": "KortDale",
+                                                    "_id": 1
+                                                },
+                                                "created": "1470749962288",
+                                                "start_date": "2015-11-27T00: 00: 00",
+                                                "end_date": "2016-01-12T00: 00: 00"
+                                            },
+                                            {
+                                                "_id": 132960,
+                                                "parentId": 132955,
+                                                "index": 2,
+                                                "expanded": true,
+                                                "leaf": false,
+                                                "ShowInTimeline": false,
+                                                "type": "task",
+                                                "name": "Design&Development",
+                                                "duration_unit": "d",
+                                                "effort_unit": "h",
+                                                "calendar_id": "",
+                                                "manually_scheduled": false,
+                                                "scheduling_mode": "Normal",
+                                                "constraint_type": "",
+                                                "task_type": "phase",
+                                                "reference": "",
+                                                "reference_id": "",
+                                                "fx_date": "",
+                                                "Color": "",
+                                                "Cls": "",
+                                                "Note": "",
+                                                "BaselinePercentDone": 0,
+                                                "Rollup": false,
+                                                "project_id": 132955,
+                                                "created_by": {
+                                                    "name": "KortDale",
+                                                    "_id": 1
+                                                },
+                                                "created": "1470749962296",
+                                                "pct_done": 0,
+                                                "duration": 55,
+                                                "children": [
+                                                    {
+                                                        "_id": 132970,
+                                                        "parentId": 132960,
+                                                        "index": 0,
+                                                        "expanded": false,
+                                                        "leaf": true,
+                                                        "ShowInTimeline": false,
+                                                        "type": "task",
+                                                        "name": "InitialArtwork",
+                                                        "duration_unit": "d",
+                                                        "effort_unit": "h",
+                                                        "calendar_id": "",
+                                                        "manually_scheduled": false,
+                                                        "scheduling_mode": "",
+                                                        "constraint_type": "",
+                                                        "task_type": "",
+                                                        "reference": "",
+                                                        "reference_id": "",
+                                                        "fx_date": "",
+                                                        "Color": "",
+                                                        "Cls": "",
+                                                        "Note": "",
+                                                        "BaselinePercentDone": 0,
+                                                        "Rollup": false,
+                                                        "project_id": 132955,
+                                                        "created_by": {
+                                                            "name": "KortDale",
+                                                            "_id": 1
+                                                        },
+                                                        "created": "1470749962301",
+                                                        "duration": 10,
+                                                        "start_date": "2016-01-22T00: 00: 00",
+                                                        "end_date": "2016-02-05T00: 00: 00"
+                                                    }
+                                                ],
+                                                "start_date": "2016-01-22T00: 00: 00",
+                                                "end_date": "2016-04-08T00: 00: 00"
+                                            }
+                                        ],
+                                        "start_date": "2016-01-22T00: 00: 00",
+                                        "end_date": "2016-04-08T00: 00: 00"
+                                    }
+                                ]
                             }
-                        }
-                    ]
+                    "dependencies": {
+                        "rows": [
+                            {
+                                "From": 132978,
+                                "To": 132980,
+                                "Type": 2,
+                                "Lag": 10,
+                                "LagUnit": "d",
+                                "Cls": "",
+                                "project_id": 132955,
+                                "created_by": {
+                                    "name": "Kort, Dale",
+                                    "_id": 1
+                                },
+                                "created": "1470750730418",
+                                "type": "dependency",
+                                "Id": 132986,
+                                "Name": null
+                            }
+                        ]
+                    },
+                    "assignments": {
+                        "rows": [
+                            
+                        ]
+                    },
+                    "resources": {
+                        "rows": [
+                            
+                        ]
                 }
-            },
-                "success": "true"
             }
+        }
+        
+## Save project as new [POST /saveAsNew/{project_uuid}] 
+
++ Parameters
+    + project_uuid (String)
+    
++ Request
+
+
+    + Body
+    
+            {
+              "name": "new",
+              "type": "project"
+            }
+    
++ Response 200 (application/json)
+
+
+    + Body
+    
+            {
+                "success": "true",
+                "data": {
+                    "success": "true",
+                    "data": null,
+                    "tasks": {
+                                "rows": [
+                                    {
+                                        "_id": 132955,
+                                        "name": "new",
+                                        "type": "project",
+                                        "bgColor": "#ca7609",
+                                        "bgColorIndex": "5",
+                                        "visibility_type": "company",
+                                        "project_template": {
+                                            "_id": 132191,
+                                            "name": "ApparelDevelopmentCalendar"
+                                        },
+                                        "created_by": {
+                                            "name": "KortDale",
+                                            "_id": 1
+                                        },
+                                        "created": "1470751143186",
+                                        "scheduling_mode": "Normal",
+                                        "pct_done": 0,
+                                        "duration": 200,
+                                        "expanded": true,
+                                        "project_id": 132955,
+                                        "active": true,
+                                        "modified": "1470751239554",
+                                        "children": [
+                                            {
+                                                "_id": 132959,
+                                                "parentId": 132955,
+                                                "index": 0,
+                                                "expanded": true,
+                                                "leaf": false,
+                                                "ShowInTimeline": false,
+                                                "type": "task",
+                                                "name": "Pre-SeasonPlanning",
+                                                "duration": 32,
+                                                "duration_unit": "d",
+                                                "effort_unit": "h",
+                                                "pct_done": 0,
+                                                "calendar_id": "",
+                                                "manually_scheduled": false,
+                                                "scheduling_mode": "Normal",
+                                                "constraint_type": "",
+                                                "task_type": "phase",
+                                                "reference": "",
+                                                "reference_id": "",
+                                                "fx_date": "",
+                                                "Color": "",
+                                                "Cls": "",
+                                                "Note": "",
+                                                "BaselinePercentDone": 0,
+                                                "Rollup": false,
+                                                "project_id": 132955,
+                                                "created_by": {
+                                                    "name": "KortDale",
+                                                    "_id": 1
+                                                },
+                                                "created": "1470749962288",
+                                                "start_date": "2015-11-27T00: 00: 00",
+                                                "end_date": "2016-01-12T00: 00: 00"
+                                            },
+                                            {
+                                                "_id": 132960,
+                                                "parentId": 132955,
+                                                "index": 2,
+                                                "expanded": true,
+                                                "leaf": false,
+                                                "ShowInTimeline": false,
+                                                "type": "task",
+                                                "name": "Design&Development",
+                                                "duration_unit": "d",
+                                                "effort_unit": "h",
+                                                "calendar_id": "",
+                                                "manually_scheduled": false,
+                                                "scheduling_mode": "Normal",
+                                                "constraint_type": "",
+                                                "task_type": "phase",
+                                                "reference": "",
+                                                "reference_id": "",
+                                                "fx_date": "",
+                                                "Color": "",
+                                                "Cls": "",
+                                                "Note": "",
+                                                "BaselinePercentDone": 0,
+                                                "Rollup": false,
+                                                "project_id": 132955,
+                                                "created_by": {
+                                                    "name": "KortDale",
+                                                    "_id": 1
+                                                },
+                                                "created": "1470749962296",
+                                                "pct_done": 0,
+                                                "duration": 55,
+                                                "children": [
+                                                    {
+                                                        "_id": 132970,
+                                                        "parentId": 132960,
+                                                        "index": 0,
+                                                        "expanded": false,
+                                                        "leaf": true,
+                                                        "ShowInTimeline": false,
+                                                        "type": "task",
+                                                        "name": "InitialArtwork",
+                                                        "duration_unit": "d",
+                                                        "effort_unit": "h",
+                                                        "calendar_id": "",
+                                                        "manually_scheduled": false,
+                                                        "scheduling_mode": "",
+                                                        "constraint_type": "",
+                                                        "task_type": "",
+                                                        "reference": "",
+                                                        "reference_id": "",
+                                                        "fx_date": "",
+                                                        "Color": "",
+                                                        "Cls": "",
+                                                        "Note": "",
+                                                        "BaselinePercentDone": 0,
+                                                        "Rollup": false,
+                                                        "project_id": 132955,
+                                                        "created_by": {
+                                                            "name": "KortDale",
+                                                            "_id": 1
+                                                        },
+                                                        "created": "1470749962301",
+                                                        "duration": 10,
+                                                        "start_date": "2016-01-22T00: 00: 00",
+                                                        "end_date": "2016-02-05T00: 00: 00"
+                                                    }
+                                                ],
+                                                "start_date": "2016-01-22T00: 00: 00",
+                                                "end_date": "2016-04-08T00: 00: 00"
+                                            }
+                                        ],
+                                        "start_date": "2016-01-22T00: 00: 00",
+                                        "end_date": "2016-04-08T00: 00: 00"
+                                    }
+                                ]
+                            }
+                    "dependencies": {
+                        "rows": [
+                            {
+                                "From": 132978,
+                                "To": 132980,
+                                "Type": 2,
+                                "Lag": 10,
+                                "LagUnit": "d",
+                                "Cls": "",
+                                "project_id": 132955,
+                                "created_by": {
+                                    "name": "Kort, Dale",
+                                    "_id": 1
+                                },
+                                "created": "1470750730418",
+                                "type": "dependency",
+                                "Id": 132986,
+                                "Name": null
+                            }
+                        ]
+                    },
+                    "assignments": {
+                        "rows": [
+                            
+                        ]
+                    },
+                    "resources": {
+                        "rows": [
+                            
+                        ]
+                }
+            }
+        }
             
 ## Get Flat List of Projects [GET /proj/flatList] 
 
