@@ -4863,7 +4863,189 @@ A Scheduled Meeting object has the following attributes:
                 }],
                 "success": "true"
             }
+## Create task [POST /domain/create] 
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "sub_type": "task", //to identify subtype od meeting
+                "organizer": 6, //id
+                "attendees": [//list of ids
+                    6
+                ],
+                "role_attendees": [], 
+                "send_invitation": false,
+                "description": "desc",
+                "start_date": "1481011200000",//if no due date don't send
+                "end_date": "1481011200000", //the same as start date, if no due date don't send
+                "all_day": true,
+                "subject": "t1",//name of the task
+                "reminder": "5", //minutes
+                "type": "scheduled_meeting", // it's a kind of scheduled_meeting
+                "pct_done": 100,//for completed
+                "originated": 132955 //Originated field, calendar or project id, don't send for My Calendar
+            }
++ Resonse 200 (application/json)
+    + Body
+    {
+        "success": "true",
+        "data": {
+            "_id": 214537,
+            "sub_type": "task",
+            "organizer": {
+                "_id": 6,
+                "email": "miroslav.boskovic@str8lines.com",
+                "first_name": "Miroslav",
+                "last_name": "Boskovic"
+            },
+            "attendees": [
+                6
+            ],
+            "role_attendees": [],
+            "send_invitation": false,
+            "description": "desc",
+            "all_day": true,
+            "subject": "t1",
+            "reminder": "5",
+            "type": "scheduled_meeting",
+            "pct_done": 100,
+            "originated": 132955,
+            "external_attendees": [],
+            "revision": 0,
+            "created_by": {
+                "name": "Boskovic, Miroslav",
+                "_id": 6
+            },
+            "created": "1481128302845",
+            "start_date": "2016-12-06T08:00:00+00:00",
+            "end_date": "2016-12-06T08:00:00+00:00"
+        }
+    }
     
+## Create Personal Todo [POST /domain/create] 
+
++ Request (application/json)
+
+    + Body
+
+           {
+                "sub_type": "personal_to_do", //to identify sub-type of an object
+                "organizer": 6, // id
+                "attendees": [], //for consistency
+                "role_attendees": [],//empty array for consistency
+                "send_invitation": false,
+                "description": "desc",
+                "start_date": "1481097600000",//if no due date don't send
+                "end_date": "1481097600000",// the same as start date, if no due date don't send
+                "all_day": true,
+                "subject": "todo1", //name of the personal todo
+                "reminder": "0", //minutes
+                "type": "scheduled_meeting", // it's a kind of scheduled_meeting
+                "pct_done": 100 //for completed,
+                 "originated": 132955 // Save to field: calendar id , don't send for My Calendar
+            }
+            
+ + Resonse 200 (application/json)
+    + Body           
+            
+    {
+        "success": "true",
+        "data": {
+            "_id": 214541,
+            "sub_type": "personal_to_do",
+            "organizer": {
+                "_id": 6,
+                "email": "miroslav.boskovic@str8lines.com",
+                "first_name": "Miroslav",
+                "last_name": "Boskovic"
+            },
+            "attendees": [//only context user, for consistency
+                6
+            ],
+            "role_attendees": [],
+            "send_invitation": false,
+            "description": "desc",
+             "originated": 132955,
+            "all_day": true,
+            "subject": "todo1",
+            "reminder": "0",
+            "type": "scheduled_meeting",
+            "pct_done": 100,
+            "external_attendees": [],
+            "revision": 0,
+            "created_by": {
+                "name": "Boskovic, Miroslav",
+                "_id": 6
+            },
+            "created": "1481128757241",
+            "start_date": "2016-12-07T08:00:00+00:00",
+            "end_date": "2016-12-07T08:00:00+00:00"
+        }
+}
+## Create Action item [POST /domain/create] 
+
++ Request (application/json)
+
+    + Body
+        {
+            "sub_type": "action_item",//to identify it's action items
+            "organizer": 6,
+            "attendees": [//list of ids
+                6,
+                305
+            ],
+            "role_attendees": [],
+            "send_invitation": true,
+            "description": "desc",
+            "start_date": "1481011200000",//if no due date don't send
+            "end_date": "1481011200000",// the same as start date, if no due date don't send
+            "all_day": true,
+            "subject": "ai1",/name of action item
+            "reminder": "",//for no reminder
+            "type": "scheduled_meeting",// it's a kind of scheduled_meeting
+            "pct_done": 100,//for complete
+            "originated": 214543 //Originated Meting id, required
+        }
++ Resonse 200 (application/json)
+    + Body           
+    {
+        "success": "true",
+        "data": {
+            "_id": 214545,
+            "sub_type": "action_item",
+            "organizer": {
+                "_id": 6,
+                "email": "miroslav.boskovic@str8lines.com",
+                "first_name": "Miroslav",
+                "last_name": "Boskovic"
+            },
+            "attendees": [
+                305,
+                6
+            ],
+            "role_attendees": [],
+            "send_invitation": true,
+            "description": "desc",
+            "all_day": true,
+            "subject": "ai1",
+            "reminder": "",
+            "type": "scheduled_meeting",
+            "pct_done": 100,
+            "originated": 214543,
+            "external_attendees": [],
+            "revision": 0,
+            "created_by": {
+                "name": "Boskovic, Miroslav",
+                "_id": 6
+            },
+            "created": "1481129471475",
+            "start_date": "2016-12-06T08:00:00+00:00",
+            "end_date": "2016-12-06T08:00:00+00:00"
+        }
+    }
+        
 ## Group SHARED CALENDAR 
 ### Create shared calendar [POST /domain/create] 
 
