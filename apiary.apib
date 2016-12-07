@@ -2004,8 +2004,6 @@ A Task object has the following attributes:
             {
                 "success": "true",
                 "data": {
-                    "success": "true",
-                    "data": null,
                     "tasks": {
                                 "rows": [
                                     {
@@ -2201,8 +2199,6 @@ A Task object has the following attributes:
             {
                 "success": "true",
                 "data": {
-                    "success": "true",
-                    "data": null,
                     "tasks": {
                                 "rows": [
                                     {
@@ -4233,6 +4229,456 @@ A View object has the following attributes:
                 "success": "true"
             }
 
+## Get View by id [GET /view/get/{id}]
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "success": "true",
+                "data": {
+                    "tasks": {
+                        "rows": [
+                            {
+                                "_id": 133481,
+                                "type": "view",
+                                "name": "Business Meetings",
+                                "comments": "",
+                                "template_id": 132191,
+                                "visibility_type": "company",
+                                "tasks": [
+                                    132201,
+                                    132494,
+                                    132496,
+                                    132498
+                                ],
+                                "created_by": {
+                                    "name": "Kort, Dale",
+                                    "_id": 1
+                                },
+                                "created": "1470751503675",
+                                "children": [
+                                    {
+                                        "_id": 132494,
+                                        "parentId": 132479,
+                                        "index": 0,
+                                        "expanded": false,
+                                        "leaf": true,
+                                        "ShowInTimeline": false,
+                                        "type": "task",
+                                        "name": "Complete Final Pricing",
+                                        "duration_unit": "d",
+                                        "effort_unit": "h",
+                                        "calendar_id": "",
+                                        "manually_scheduled": false,
+                                        "scheduling_mode": "",
+                                        "constraint_type": "",
+                                        "task_type": "",
+                                        "reference": "",
+                                        "reference_id": "",
+                                        "fx_date": "",
+                                        "Color": "",
+                                        "Cls": "",
+                                        "Note": "",
+                                        "BaselinePercentDone": 0,
+                                        "Rollup": false,
+                                        "project_id": 132191,
+                                        "created_by": {
+                                            "name": "Kort, Dale",
+                                            "_id": 1
+                                        },
+                                        "created": "1470750454369",
+                                        "start_date": "1463356800000",
+                                        "duration": 5,
+                                        "end_date": "1463788800000"
+                                    },
+                                    {
+                                        "_id": 132496,
+                                        "parentId": 132479,
+                                        "index": 1,
+                                        "expanded": false,
+                                        "leaf": true,
+                                        "ShowInTimeline": false,
+                                        "type": "task",
+                                        "name": "Complete Sales Plan",
+                                        "duration_unit": "d",
+                                        "effort_unit": "h",
+                                        "calendar_id": "",
+                                        "manually_scheduled": false,
+                                        "scheduling_mode": "",
+                                        "constraint_type": "",
+                                        "task_type": "",
+                                        "reference": "",
+                                        "reference_id": "",
+                                        "fx_date": "",
+                                        "Color": "",
+                                        "Cls": "",
+                                        "Note": "",
+                                        "BaselinePercentDone": 0,
+                                        "Rollup": false,
+                                        "project_id": 132191,
+                                        "created_by": {
+                                            "name": "Kort, Dale",
+                                            "_id": 1
+                                        },
+                                        "created": "1470750454375",
+                                        "start_date": "1463961600000",
+                                        "duration": 2,
+                                        "end_date": "1464134400000"
+                                    },
+                                    {
+                                        "_id": 132201,
+                                        "parentId": 132193,
+                                        "index": 0,
+                                        "expanded": false,
+                                        "leaf": true,
+                                        "ShowInTimeline": false,
+                                        "type": "task",
+                                        "name": "Last Season Review",
+                                        "duration": 5,
+                                        "duration_unit": "d",
+                                        "effort_unit": "h",
+                                        "calendar_id": "",
+                                        "manually_scheduled": false,
+                                        "scheduling_mode": "",
+                                        "constraint_type": "",
+                                        "task_type": "meeting",
+                                        "reference": "",
+                                        "reference_id": "",
+                                        "fx_date": "",
+                                        "Color": "",
+                                        "Cls": "",
+                                        "Note": "",
+                                        "BaselinePercentDone": 0,
+                                        "Rollup": false,
+                                        "start_date": "1446422400000",
+                                        "end_date": "1446854400000",
+                                        "project_id": 132191,
+                                        "created_by": {
+                                            "name": "Kort, Dale",
+                                            "_id": 1
+                                        },
+                                        "created": "1470749962311"
+                                    },
+                                    {
+                                        "_id": 132498,
+                                        "parentId": 132479,
+                                        "index": 3,
+                                        "expanded": false,
+                                        "leaf": true,
+                                        "ShowInTimeline": false,
+                                        "type": "task",
+                                        "name": "Sales Meetings",
+                                        "duration_unit": "d",
+                                        "effort_unit": "h",
+                                        "calendar_id": "",
+                                        "manually_scheduled": false,
+                                        "scheduling_mode": "",
+                                        "constraint_type": "",
+                                        "task_type": "meeting",
+                                        "reference": "",
+                                        "reference_id": "",
+                                        "fx_date": "",
+                                        "Color": "",
+                                        "Cls": "",
+                                        "Note": "",
+                                        "BaselinePercentDone": 0,
+                                        "Rollup": false,
+                                        "project_id": 132191,
+                                        "created_by": {
+                                            "name": "Kort, Dale",
+                                            "_id": 1
+                                        },
+                                        "created": "1470750454381",
+                                        "start_date": "1466553600000",
+                                        "duration": 5,
+                                        "end_date": "1467158400000"
+                                    }
+                                ],
+                                "editable": true
+                            }
+                        ]
+                    },
+                    "resources": {
+                        "rows": []
+                    }
+                }
+            }
+
+
+## Update View [POST /view/update/{_id}] 
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "type": "view",
+                "name": "Business Meetings",
+                "comments": "",
+                "template_id": 132191,
+                "visibility_type": "company",
+                "visible_to": [
+                    0
+                ],
+                "tasks": {
+                    "added": [
+                        {
+                            "_id": 132209,
+                            "parentId": 133481,
+                            "index": 4,
+                            "expanded": false,
+                            "leaf": true,
+                            "ShowInTimeline": false,
+                            "type": "",
+                            "name": "Establish Final Line Direction",
+                            "duration_unit": "d",
+                            "effort_unit": "h",
+                            "calendar_id": "",
+                            "manually_scheduled": false,
+                            "scheduling_mode": "",
+                            "constraint_type": "",
+                            "task_type": "meeting",
+                            "reference": "",
+                            "reference_id": "",
+                            "fx_date": "",
+                            "Color": "",
+                            "Cls": "",
+                            "Note": "",
+                            "BaselinePercentDone": 0,
+                            "Rollup": false,
+                            "project_id": 132191,
+                            "created_by": {
+                                "name": "Kort, Dale",
+                                "_id": 1
+                            },
+                            "created": 1470749962331,
+                            "duration": 5,
+                            "start_date": "2015-12-02T00:00:00",
+                            "end_date": "2015-12-09T00:00:00",
+                            "id": "Str8lines_desktop.model.template.Task-67"
+                        }
+                    ],
+                    "removed": [
+                        {
+                            "_id": 132496,
+                            "parentId": 133481,
+                            "index": 2,
+                            "expanded": false,
+                            "leaf": true,
+                            "ShowInTimeline": false,
+                            "type": "",
+                            "name": "Complete Sales Plan",
+                            "duration_unit": "d",
+                            "effort_unit": "h",
+                            "calendar_id": "",
+                            "manually_scheduled": false,
+                            "scheduling_mode": "",
+                            "constraint_type": "",
+                            "task_type": "",
+                            "reference": "",
+                            "reference_id": "",
+                            "fx_date": "",
+                            "Color": "",
+                            "Cls": "",
+                            "Note": "",
+                            "BaselinePercentDone": 0,
+                            "Rollup": false,
+                            "project_id": 132191,
+                            "created_by": {
+                                "name": "Kort, Dale",
+                                "_id": 1
+                            },
+                            "created": 1470750454375,
+                            "start_date": "1463961600000",
+                            "duration": 2,
+                            "end_date": "1464134400000",
+                            "id": "Str8lines_desktop.model.template.Task-60"
+                        }
+                    ]
+                }
+            }
+        
++ Response 200 (application/json)
+
+
+    + Body
+    
+            {
+    "success": "true",
+    "data": {
+        "tasks": {
+            "rows": [
+                {
+                    "_id": 133481,
+                    "type": "view",
+                    "name": "Business Meetings",
+                    "comments": "",
+                    "template_id": 132191,
+                    "visibility_type": "company",
+                    "tasks": [
+                        132201,
+                        132494,
+                        132498,
+                        132209
+                    ],
+                    "created_by": {
+                        "name": "Kort, Dale",
+                        "_id": 1
+                    },
+                    "created": "1470751503675",
+                    "visible_to": [
+                        0
+                    ],
+                    "children": [
+                        {
+                            "_id": 132494,
+                            "parentId": 132479,
+                            "index": 0,
+                            "expanded": false,
+                            "leaf": true,
+                            "ShowInTimeline": false,
+                            "type": "task",
+                            "name": "Complete Final Pricing",
+                            "duration_unit": "d",
+                            "effort_unit": "h",
+                            "calendar_id": "",
+                            "manually_scheduled": false,
+                            "scheduling_mode": "",
+                            "constraint_type": "",
+                            "task_type": "",
+                            "reference": "",
+                            "reference_id": "",
+                            "fx_date": "",
+                            "Color": "",
+                            "Cls": "",
+                            "Note": "",
+                            "BaselinePercentDone": 0,
+                            "Rollup": false,
+                            "project_id": 132191,
+                            "created_by": {
+                                "name": "Kort, Dale",
+                                "_id": 1
+                            },
+                            "created": "1470750454369",
+                            "start_date": "1463356800000",
+                            "duration": 5,
+                            "end_date": "1463788800000"
+                        },
+                        {
+                            "_id": 132209,
+                            "parentId": 132193,
+                            "index": 4,
+                            "expanded": false,
+                            "leaf": true,
+                            "ShowInTimeline": false,
+                            "type": "task",
+                            "name": "Establish Final Line Direction",
+                            "duration_unit": "d",
+                            "effort_unit": "h",
+                            "calendar_id": "",
+                            "manually_scheduled": false,
+                            "scheduling_mode": "",
+                            "constraint_type": "",
+                            "task_type": "meeting",
+                            "reference": "",
+                            "reference_id": "",
+                            "fx_date": "",
+                            "Color": "",
+                            "Cls": "",
+                            "Note": "",
+                            "BaselinePercentDone": 0,
+                            "Rollup": false,
+                            "project_id": 132191,
+                            "created_by": {
+                                "name": "Kort, Dale",
+                                "_id": 1
+                            },
+                            "created": "1470749962331",
+                            "duration": 5,
+                            "start_date": "1449014400000",
+                            "end_date": "1449619200000"
+                        },
+                        {
+                            "_id": 132201,
+                            "parentId": 132193,
+                            "index": 0,
+                            "expanded": false,
+                            "leaf": true,
+                            "ShowInTimeline": false,
+                            "type": "task",
+                            "name": "Last Season Review",
+                            "duration": 5,
+                            "duration_unit": "d",
+                            "effort_unit": "h",
+                            "calendar_id": "",
+                            "manually_scheduled": false,
+                            "scheduling_mode": "",
+                            "constraint_type": "",
+                            "task_type": "meeting",
+                            "reference": "",
+                            "reference_id": "",
+                            "fx_date": "",
+                            "Color": "",
+                            "Cls": "",
+                            "Note": "",
+                            "BaselinePercentDone": 0,
+                            "Rollup": false,
+                            "start_date": "1446422400000",
+                            "end_date": "1446854400000",
+                            "project_id": 132191,
+                            "created_by": {
+                                "name": "Kort, Dale",
+                                "_id": 1
+                            },
+                            "created": "1470749962311"
+                        },
+                        {
+                            "_id": 132498,
+                            "parentId": 132479,
+                            "index": 3,
+                            "expanded": false,
+                            "leaf": true,
+                            "ShowInTimeline": false,
+                            "type": "task",
+                            "name": "Sales Meetings",
+                            "duration_unit": "d",
+                            "effort_unit": "h",
+                            "calendar_id": "",
+                            "manually_scheduled": false,
+                            "scheduling_mode": "",
+                            "constraint_type": "",
+                            "task_type": "meeting",
+                            "reference": "",
+                            "reference_id": "",
+                            "fx_date": "",
+                            "Color": "",
+                            "Cls": "",
+                            "Note": "",
+                            "BaselinePercentDone": 0,
+                            "Rollup": false,
+                            "project_id": 132191,
+                            "created_by": {
+                                "name": "Kort, Dale",
+                                "_id": 1
+                            },
+                            "created": "1470750454381",
+                            "start_date": "1466553600000",
+                            "duration": 5,
+                            "end_date": "1467158400000"
+                        }
+                    ],
+                    "editable": true
+                }
+            ]
+        },
+        "resources": {
+            "rows": []
+        }
+    }
+}
+
 
 ## Scheduled Meeting [/meeting]
 
@@ -4266,7 +4712,7 @@ A Scheduled Meeting object has the following attributes:
                 "location": "conference room",
                 "subject": "Test meetings",
                 "type": "scheduled_meeting",
-                "shared_calendar":826518
+                "originated":826518 //don't sent this parameter if adding to My Calendar
             }
         
 + Response 200 (application/json)
@@ -4306,7 +4752,7 @@ A Scheduled Meeting object has the following attributes:
                     "created": "1446116055773",
                     "description": "testing meeting stuff . This is description",
                     "type": "scheduled_meeting",
-                    "shared_calendar":826518,
+                    "originated":826518,
                     "uuid": "114467.2689.114369",
                     "_primary_image": {},
                     "organizer": {
