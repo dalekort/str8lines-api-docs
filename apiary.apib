@@ -4880,6 +4880,7 @@ A Scheduled Meeting object has the following attributes:
                 "description": "desc",
                 "start_date": "1481011200000",//if no due date don't send
                 "end_date": "1481011200000", //the same as start date, if no due date don't send
+                "has_due_date":true,//if it has due date send true, otherwas dueise send false
                 "all_day": true,
                 "subject": "t1",//name of the task
                 "reminder": "5", //minutes
@@ -4920,7 +4921,8 @@ A Scheduled Meeting object has the following attributes:
             },
             "created": "1481128302845",
             "start_date": "2016-12-06T08:00:00+00:00",
-            "end_date": "2016-12-06T08:00:00+00:00"
+            "end_date": "2016-12-06T08:00:00+00:00",
+            "has_due_date":true
         }
     }
     
@@ -4939,6 +4941,7 @@ A Scheduled Meeting object has the following attributes:
                 "description": "desc",
                 "start_date": "1481097600000",//if no due date don't send
                 "end_date": "1481097600000",// the same as start date, if no due date don't send
+                "has_due_date":true,//if it has due date send true, othewvise send false
                 "all_day": true,
                 "subject": "todo1", //name of the personal todo
                 "reminder": "0", //minutes
@@ -4982,6 +4985,7 @@ A Scheduled Meeting object has the following attributes:
             "created": "1481128757241",
             "start_date": "2016-12-07T08:00:00+00:00",
             "end_date": "2016-12-07T08:00:00+00:00"
+            "has_due_date":true
         }
 }
 ## Create Action item [POST /domain/create] 
@@ -5001,6 +5005,7 @@ A Scheduled Meeting object has the following attributes:
             "description": "desc",
             "start_date": "1481011200000",//if no due date don't send
             "end_date": "1481011200000",// the same as start date, if no due date don't send
+            "has_due_date":true,//if it has due date send true, otherwise send false
             "all_day": true,
             "subject": "ai1",/name of action item
             "reminder": "",//for no reminder
@@ -5042,7 +5047,8 @@ A Scheduled Meeting object has the following attributes:
             },
             "created": "1481129471475",
             "start_date": "2016-12-06T08:00:00+00:00",
-            "end_date": "2016-12-06T08:00:00+00:00"
+            "end_date": "2016-12-06T08:00:00+00:00",
+            "has_due_date":true
         }
     }
         
